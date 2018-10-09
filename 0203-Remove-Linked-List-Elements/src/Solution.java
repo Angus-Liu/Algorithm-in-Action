@@ -85,11 +85,27 @@ class Solution {
         }
     }
 
+    /**
+     * 递归方式解法（简化）
+     *
+     * @param head
+     * @param val
+     * @return
+     */
+    public ListNode removeElements4(ListNode head, int val) {
+        // 考虑问题规模最小的情况（递归退出条件）
+        if (head == null) return null;
+        // 减小问题规模
+        head.next = removeElements4(head.next, val);
+        // 判断 head 节点是否需要删除
+        return head.val == val ? head.next : head;
+    }
+
     public static void main(String[] args) {
         ListNode head = new ListNode(new int[]{1, 2, 6, 3, 4, 5, 6});
         System.out.println(head);
         Solution solution = new Solution();
-        head = solution.removeElements3(head, 6);
+        head = solution.removeElements4(head, 6);
         System.out.println(head);
     }
 }
