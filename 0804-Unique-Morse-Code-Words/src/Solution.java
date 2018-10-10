@@ -9,7 +9,7 @@ class Solution {
 //        Set<String> set = new TreeSet<>();
         Set<String> set = new HashSet<>();
         String[] codes = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--.."};
-        for (String word: words) {
+        for (String word : words) {
             char[] chars = word.toCharArray();
             StringBuilder code = new StringBuilder();
             for (char ch : chars) {
