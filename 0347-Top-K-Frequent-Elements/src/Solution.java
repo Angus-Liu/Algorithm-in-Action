@@ -20,7 +20,7 @@ class Solution {
         }
     }
 
-    public List<Integer> topKFrequent(int[] nums, int k) {
+    public List<Integer> topKFrequent1(int[] nums, int k) {
         // 先用映射记录各个数值及其对应的频次
         Map<Integer, Integer> map = new HashMap<>(nums.length);
         for (int num : nums) {
@@ -47,6 +47,51 @@ class Solution {
         List<Integer> res = new ArrayList<>();
         while (!pq.isEmpty()) {
             res.add(pq.remove().e);
+        }
+        // 虽已 AC，但是结果还不是很完美，与标准答案顺序相反
+        return res;
+    }
+
+    /**
+     * 上一种方法的简化版（省去了 Freq 类）
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
+    public List<Integer> topKFrequent(int[] nums, int k) {
+        // 先用映射记录各个数值及其对应的频次
+        Map<Integer, Integer> map = new HashMap<>(nums.length);
+        for (int num : nums) {
+            Integer count = map.get(num);
+            if (count != null) {
+                map.put(num, ++count);
+            } else {
+                map.put(num, 1);
+            }
+        }
+        // 使用优先级队列实现
+        PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer a, Integer b) {
+                // 比较 a 和 b 出现的频次
+                return map.get(a) - map.get(b);
+            }
+        });
+        for (int key : map.keySet()) {
+            // 优先级队列中值保留频次最大的前 k 个数值
+            if (pq.size() < k) {
+                pq.add(key);
+            }
+            // 频次是否大于优先级队列中队首元素的频次
+            else if (map.get(key) > map.get(pq.peek())) {
+                pq.remove();
+                pq.add(key);
+            }
+        }
+        List<Integer> res = new ArrayList<>();
+        while (!pq.isEmpty()) {
+            res.add(pq.remove());
         }
         // 虽已 AC，但是结果还不是很完美，与标准答案顺序相反
         return res;
