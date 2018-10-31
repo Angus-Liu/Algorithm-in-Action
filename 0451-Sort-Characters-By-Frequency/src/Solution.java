@@ -5,6 +5,7 @@ class Solution {
         for (char ch : chars) {
             freq[ch]++;
         }
+        // 待优化，以下算法实在是太慢
         StringBuilder res = new StringBuilder();
         for (int i = chars.length; i > 0; i--) {
             for (int j = 0; j < freq.length; j++) {
