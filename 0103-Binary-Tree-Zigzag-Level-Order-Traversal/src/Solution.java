@@ -5,17 +5,17 @@ import java.util.Queue;
 
 class Solution {
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        List<List<Integer>> list = new LinkedList<List<Integer>>();
+        List<List<Integer>> list = new LinkedList<>();
         if (root == null) {
             return list;
         }
         // 创建一个队列，用于存放所有节点
-        Queue<TreeNode> currentLevel = new LinkedList<TreeNode>();
+        Queue<TreeNode> currentLevel = new LinkedList<>();
         currentLevel.add(root);
         int level = 0;
         while (!currentLevel.isEmpty()) {
             // 创建一个 List 记录当前层所有节点值
-            List<Integer> currentList = new LinkedList<Integer>();
+            List<Integer> currentList = new LinkedList<>();
             int size = currentLevel.size();
             for (int i = 0; i < size; i++) {
                 // poll 获取并移除此列表的头结点
