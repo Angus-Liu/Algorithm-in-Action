@@ -93,7 +93,7 @@ class Solution {
         while (!pq.isEmpty()) {
             res.add(pq.remove());
         }
-        // 虽已 AC，但是结果还不是很完美，与标准答案顺序相反
+//         Collections.reverse(res);
         return res;
     }
 
