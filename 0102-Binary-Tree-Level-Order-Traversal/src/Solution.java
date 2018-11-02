@@ -37,7 +37,6 @@ class Solution {
 
     public List<List<Integer>> levelOrder2(TreeNode root) {
         List<List<Integer>> list = new LinkedList<List<Integer>>();
-
         if (root == null) {
             return list;
         }
@@ -53,10 +52,12 @@ class Solution {
                 TreeNode currentNode = currentLevel.poll();
                 currentList.add(currentNode.val);
                 //记录每一层的节点值到List<Integer>中
-                if (currentNode.left != null)
+                if (currentNode.left != null) {
                     currentLevel.add(currentNode.left);
-                if (currentNode.right != null)
+                }
+                if (currentNode.right != null) {
                     currentLevel.add(currentNode.right);
+                }
                 //将当前List<Integer>添加到List<List<Integer>>中
             }
             list.add(currentList);
