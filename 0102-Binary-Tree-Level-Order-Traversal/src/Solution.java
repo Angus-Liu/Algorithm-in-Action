@@ -37,6 +37,7 @@ class Solution {
 
     public List<List<Integer>> levelOrder2(TreeNode root) {
         List<List<Integer>> list = new LinkedList<List<Integer>>();
+
         if (root == null) {
             return list;
         }
