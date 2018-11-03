@@ -18,6 +18,7 @@ class Solution {
         } else if (root1.val != root2.val) {
             return false;
         }
+        // 递归，就该节点而言，只需要关注自己的左右孩子是否对称即可
         return isSymmetric(root1.left, root2.right) && isSymmetric(root1.right, root2.left);
     }
 }
