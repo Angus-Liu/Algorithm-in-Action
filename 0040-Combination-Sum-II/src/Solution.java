@@ -26,6 +26,7 @@ class Solution {
         }
         // 限制 index，为了防止组合重复
         for (int i = index; i < candidates.length; i++) {
+            // 这里的判重逻辑较为绕，按题意分析得知
             if (!used[i] && (i == 0 || (candidates[i] != candidates[i - 1] || used[i - 1]))) {
                 // 递归
                 c.add(candidates[i]);
