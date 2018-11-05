@@ -80,9 +80,11 @@ class Solution {
 
     public static void main(String[] args) {
         List<List<String>> nQueensBoard = new Solution().solveNQueens(8);
-        for (List<String> queensBoard : nQueensBoard) {
-            System.out.println();
-            queensBoard.forEach(System.out::println);
-        }
+        nQueensBoard.forEach(
+                queensBoard -> {
+                    System.out.println();
+                    queensBoard.forEach(System.out::println);
+                }
+        );
     }
 }
