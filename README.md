@@ -31,6 +31,7 @@ Some of my practices on LeetCode : )
 |  51  | [N-Queens](https://leetcode.com/problems/n-queens)           | [N皇后](https://leetcode-cn.com/problems/n-queens)           | 困难 |               [Solution](./0051-N-Queens/src)                |  √   |  -   |
 |  52  | [N-Queens II](https://leetcode.com/problems/n-queens-ii)     | [N皇后 II](https://leetcode-cn.com/problems/n-queens-ii)     | 困难 |                              -                               |  ×   |  -   |
 |  61  | [Rotate List](https://leetcode.com/problems/rotate-list)     | [旋转链表](https://leetcode-cn.com/problems/rotate-list)     | 中等 |              [Solution](./0061-Rotate-List/src)              |  √   |  -   |
+|  70  | [Climbing Stairs](https://leetcode.com/problems/climbing-stairs) | [爬楼梯](https://leetcode-cn.com/problems/climbing-stairs)   | 简单 |            [Solution](./0070-Climbing-Stairs/src)            |  √   |  -   |
 |  71  | [Simplify Path](https://leetcode.com/problems/simplify-path) | [简化路径](https://leetcode-cn.com/problems/simplify-path)   | 中等 |                              -                               |  ×   |  -   |
 |  75  | [Sort Colors](https://leetcode.com/problems/sort-colors)     | [颜色分类](https://leetcode-cn.com/problems/sort-colors)     | 中等 |              [Solution](./0075-Sort-Colors/src)              |  √   |  -   |
 |  76  | [Minimum Window Substring](https://leetcode.com/problems/minimum-window-substring) | [最小覆盖子串](https://leetcode-cn.com/problems/minimum-window-substring) | 困难 |       [Solution](./0076-Minimum-Window-Substring/src)        |  √   |  -   |
