@@ -27,6 +27,7 @@ Some of my practices on LeetCode : )
 |  46  | [Permutations](https://leetcode.com/problems/permutations)   | [全排列](https://leetcode-cn.com/problems/permutations)      | 中等 |             [Solution](./0046-Permutations/src)              |  √   |  -   |
 |  47  | [Permutations II](https://leetcode.com/problems/permutations-ii) | [全排列 II](https://leetcode-cn.com/problems/permutations-ii) | 中等 |            [Solution](./0047-Permutations-II/src)            |  √   |  -   |
 |  49  | [Group Anagrams](https://leetcode.com/problems/group-anagrams) | [字母异位词分组](https://leetcode-cn.com/problems/group-anagrams) | 中等 |            [Solution](./0049-Group-Anagrams/src)             |  √   |  -   |
+|  51  | [N-Queens](https://leetcode.com/problems/n-queens)           | [N皇后](https://leetcode-cn.com/problems/n-queens)           | 困难 |               [Solution](./0051-N-Queens/src)                |  √   |  -   |
 |  61  | [Rotate List](https://leetcode.com/problems/rotate-list)     | [旋转链表](https://leetcode-cn.com/problems/rotate-list)     | 中等 |              [Solution](./0061-Rotate-List/src)              |  √   |  -   |
 |  71  | [Simplify Path](https://leetcode.com/problems/simplify-path) | [简化路径](https://leetcode-cn.com/problems/simplify-path)   | 中等 |                              -                               |  ×   |  -   |
 |  75  | [Sort Colors](https://leetcode.com/problems/sort-colors)     | [颜色分类](https://leetcode-cn.com/problems/sort-colors)     | 中等 |              [Solution](./0075-Sort-Colors/src)              |  √   |  -   |
