@@ -60,6 +60,7 @@ Some of my practices on LeetCode : )
 | 125  | [Valid Palindrome](https://leetcode.com/problems/valid-palindrome) | [验证回文串](https://leetcode-cn.com/problems/valid-palindrome) | 简单 |           [Solution](./0125-Valid-Palindrome/src)            |  √   |  -   |
 | 112  | [Path Sum](https://leetcode.com/problems/path-sum)           | [路径总和](https://leetcode-cn.com/problems/path-sum)        | 简单 |               [Solution](./0112-Path-Sum/src)                |  √   |  -   |
 | 113  | [Path Sum II](https://leetcode.com/problems/path-sum-ii)     | [路径总和 II](https://leetcode-cn.com/problems/path-sum-ii)  | 中等 |              [Solution](./0113-Path-Sum-II/src)              |  √   |  -   |
+| 120  | [Triangle](https://leetcode.com/problems/triangle)           | [三角形最小路径和](https://leetcode-cn.com/problems/triangle) | 中等 |               [Solution](./0120-Triangle/src)                |  √   |  -   |
 | 126  | [Word Ladder II](https://leetcode.com/problems/word-ladder-ii) | [单词接龙 II](https://leetcode-cn.com/problems/word-ladder-ii) | 困难 |                              -                               |  ×   |  -   |
 | 127  | [Word Ladder](https://leetcode.com/problems/word-ladder)     | [单词接龙](https://leetcode-cn.com/problems/word-ladder)     | 中等 |                              -                               |  ×   |  -   |
 | 129  | [Sum Root to Leaf Numbers](https://leetcode.com/problems/sum-root-to-leaf-numbers) | [求根到叶子节点数字之和](https://leetcode-cn.com/problems/sum-root-to-leaf-numbers) | 中等 |       [Solution](./0129-Sum-Root-to-Leaf-Numbers/src)        |  √   |  -   |
