@@ -34,10 +34,9 @@ class Solution {
      * @return
      */
     public ListNode reverseList2(ListNode head) {
-        // 递归到最后一个节点
         ListNode pre = null;
         ListNode cur = head;
-        ListNode next = null;
+        ListNode next;
         while (cur != null) {
             next = cur.next;
             // 进行变换
