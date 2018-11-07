@@ -12,6 +12,7 @@ import java.util.Comparator;
  */
 class Solution {
     public int eraseOverlapIntervals(Interval[] intervals) {
+        // 贪心算法
         if (intervals.length == 0) {
             return 0;
         }
