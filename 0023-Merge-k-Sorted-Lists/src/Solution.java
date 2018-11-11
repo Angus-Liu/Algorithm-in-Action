@@ -1,5 +1,3 @@
-import java.awt.*;
-
 class Solution {
     public ListNode mergeKLists(ListNode[] lists) {
         ListNode ret = null;
