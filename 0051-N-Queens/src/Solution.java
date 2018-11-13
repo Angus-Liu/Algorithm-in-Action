@@ -44,7 +44,7 @@ class Solution {
             res.add(generateBoard(row));
             return;
         }
-        // 表示在 index 的第 i 列尝试摆放皇后
+        // 表示在 index 行的第 i 列尝试摆放皇后
         for (int i = 0; i < n; i++) {
             if (!col[i] && !dia1[i - index + n - 1] && !dia2[i + index]) {
                 // 递归
