@@ -29,7 +29,7 @@ Some of my practices on LeetCode : )
 |  47  | [Permutations II](https://leetcode.com/problems/permutations-ii) | [全排列 II](https://leetcode-cn.com/problems/permutations-ii) | 中等 |            [Solution](./0047-Permutations-II/src)            |  √   |  -   |
 |  49  | [Group Anagrams](https://leetcode.com/problems/group-anagrams) | [字母异位词分组](https://leetcode-cn.com/problems/group-anagrams) | 中等 |            [Solution](./0049-Group-Anagrams/src)             |  √   |  -   |
 |  51  | [N-Queens](https://leetcode.com/problems/n-queens)           | [N皇后](https://leetcode-cn.com/problems/n-queens)           | 困难 |               [Solution](./0051-N-Queens/src)                |  √   |  -   |
-|  52  | [N-Queens II](https://leetcode.com/problems/n-queens-ii)     | [N皇后 II](https://leetcode-cn.com/problems/n-queens-ii)     | 困难 |                              -                               |  ×   |  -   |
+|  52  | [N-Queens II](https://leetcode.com/problems/n-queens-ii)     | [N皇后 II](https://leetcode-cn.com/problems/n-queens-ii)     | 困难 |              [Solution](./0052-N-Queens-II/src)              |  √   |  -   |
 |  61  | [Rotate List](https://leetcode.com/problems/rotate-list)     | [旋转链表](https://leetcode-cn.com/problems/rotate-list)     | 中等 |              [Solution](./0061-Rotate-List/src)              |  √   |  -   |
 |  62  | [Unique Paths](https://leetcode.com/problems/unique-paths)   | [不同路径](https://leetcode-cn.com/problems/unique-paths)    | 中等 |             [Solution](./0062-Unique-Paths/src)              |  √   |  -   |
 |  63  | [Unique Paths II](https://leetcode.com/problems/unique-paths-ii) | [不同路径 II](https://leetcode-cn.com/problems/unique-paths-ii) | 中等 |                              -                               |  ×   |  -   |
