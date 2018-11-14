@@ -80,12 +80,13 @@ class Solution {
 
     public static void main(String[] args) {
         // 观察解结果可以看出，一半解是另一半解的镜像对称，所以有很大的优化空间
-        List<List<String>> nQueensBoard = new Solution().solveNQueens(4);
+        List<List<String>> nQueensBoard = new Solution().solveNQueens(8);
         nQueensBoard.forEach(
                 queensBoard -> {
                     System.out.println();
                     queensBoard.forEach(System.out::println);
                 }
         );
+        System.out.println("Total: " + nQueensBoard.size());
     }
 }
