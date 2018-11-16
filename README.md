@@ -1,6 +1,8 @@
 # LeetCode in Action
 
-Some of my practices on LeetCode : )
+> Some of my practices on LeetCode : )
+>
+> 这个仓库保存着我在 LeetCode 上的一些解答（都是被工作给逼的呀），代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。对我而言，高效不是首选的标准，清晰度才是。后续还会整合其他题库，这取决于我什么时候找到工作 : (。如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
 
 ## 索引
 
