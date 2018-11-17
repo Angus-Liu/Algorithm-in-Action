@@ -4,6 +4,7 @@ import java.util.List;
 class Solution {
 
     public List<String> restoreIpAddresses(String s) {
+        // 除了下面比较简单的方法外，应该还可以使用递归回溯来解决
         List<String> res = new ArrayList<>();
         if (s == null || s.length() == 0 || s.length() > 12) {
             return res;
