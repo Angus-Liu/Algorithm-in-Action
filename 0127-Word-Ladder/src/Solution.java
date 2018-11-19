@@ -10,6 +10,7 @@ class Solution {
         wordList.add(beginWord);
         int begin = wordList.indexOf(beginWord);
         int n = wordList.size();
+        // 比较单词间两两相似性，初始化 g
         boolean[][] g = new boolean[n][n];
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < i; j++) {
