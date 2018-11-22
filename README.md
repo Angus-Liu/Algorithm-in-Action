@@ -148,7 +148,7 @@
 | 795  | [Number of Subarrays with Bounded Maximum](https://leetcode.com/problems/number-of-subarrays-with-bounded-maximum/) | [区间子数组个数](https://leetcode-cn.com/problems/number-of-subarrays-with-bounded-maximum/) | 中等 | [Solution](./0795-Number-of-Subarrays-with-Bounded-Maximum/src) |  √   |     数组     |
 | 804  | [Unique Morse Code Words](https://leetcode.com/problems/unique-morse-code-words) | [唯一摩尔斯密码词](https://leetcode-cn.com/problems/unique-morse-code-words) | 简单 |        [Solution](./0804-Unique-Morse-Code-Words/src)        |  √   |      -       |
 | 929  | [Unique Email Addresses](https://leetcode.com/problems/unique-email-addresses/) | [独特的电子邮件地址](https://leetcode-cn.com/problems/unique-email-addresses) | 简单 |        [Solution](./0929-Unique-Email-Addresses/src)         |  √   |      -       |
-| 930  | [Binary Subarrays With Sum](https://leetcode.com/problems/binary-subarrays-with-sum) | [和相同的二元子数组](https://leetcode-cn.com/problems/binary-subarrays-with-sum) | 中等 |       [Solution](./0930-Binary-Subarrays-With-Sum/src)       |  ×   |      -       |
+| 930  | [Binary Subarrays With Sum](https://leetcode.com/problems/binary-subarrays-with-sum) | [和相同的二元子数组](https://leetcode-cn.com/problems/binary-subarrays-with-sum) | 中等 |       [Solution](./0930-Binary-Subarrays-With-Sum/src)       |  √   |     数组     |
 | 933  | [Number of Recent Calls](https://leetcode.com/contest/weekly-contest-109/problems/number-of-recent-calls/) | [最近的请求次数](https://leetcode-cn.com/contest/weekly-contest-109/problems/number-of-recent-calls/) | 简单 |        [Solution](./0933-Number-of-Recent-Calls/src)         |  √   |      -       |
 
 

@@ -1,49 +1,47 @@
-/**
- * 930. 和相同的二元子数组
- * <p>
- * 在由若干 0 和 1  组成的数组 A 中，有多少个和为 S 的非空子数组。
- * <p>
- * 示例：
- * <p>
- * 输入：A = [1,0,1,0,1], S = 2
- * 输出：4
- * 解释：
- * 如下面黑体所示，有 4 个满足题目要求的子数组：
- * [1,0,1,0,1]
- * [1,0,1,0,1]
- * [1,0,1,0,1]
- * [1,0,1,0,1]
- * <p>
- * 提示：
- * A.length <= 30000
- * 0 <= S <= A.length
- * A[i] 为 0 或 1
- */
 class Solution {
+
     public int numSubarraysWithSum(int[] A, int S) {
-        int count = 0;
+        int res = 0;
         for (int i = 0; i < A.length; i++) {
-            count += numSubarraysWithSum(A, S, i + 1, A[i], 0);
+            int sum = 0;
+            for (int j = i; j < A.length; j++) {
+                sum += A[j];
+                if (sum == S) {
+                    res++;
+                }
+                if (sum > S) {
+                    break;
+                }
+            }
         }
-        return count;
+
+        return res;
     }
 
-    private int numSubarraysWithSum(int[] A, int S, int index, int sum, int count) {
-        if (sum == S) {
-            ++count;
+    /**
+     * 参考
+     */
+    public int numSubarraysWithSum2(int[] A, int S) {
+        if (null == A || A.length == 0) {
+            return 0;
         }
-        if (index >= A.length) {
-            return count;
+        int tempSum = 0, res = 0;
+        int[] count = new int[A.length + 1];
+        count[0] = 1;
+        for (int i : A) {
+            tempSum += i;
+            if (tempSum >= S) {
+                res += count[tempSum - S];
+            }
+            count[tempSum]++;
         }
-        sum += A[index];
-
-        return numSubarraysWithSum(A, S, index + 1, sum, count);
+        return res;
     }
+
 
     public static void main(String[] args) {
+        int[] A = new int[]{0, 0, 0, 0, 0};
         Solution solution = new Solution();
-        solution.numSubarraysWithSum(new int[]{1, 0, 1, 0, 1}, 2);
-        solution.numSubarraysWithSum(new int[]{0, 0, 0, 0, 0}, 0);
-        solution.numSubarraysWithSum(new int[]{0, 0, 0, 0, 0, 0, 1, 0, 0, 0}, 0);
+        System.out.println(solution.numSubarraysWithSum(A, 0));
     }
 }
