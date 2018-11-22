@@ -6,11 +6,10 @@ class Solution {
             int sum = 0;
             for (int j = i; j < A.length; j++) {
                 sum += A[j];
-                if (sum == S) {
-                    res++;
-                }
                 if (sum > S) {
                     break;
+                } else if (sum == S) {
+                    res++;
                 }
             }
         }
