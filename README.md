@@ -2,7 +2,7 @@
 
 > Some of my practices on LeetCode : )
 >
-> 这个仓库保存着我在 LeetCode 上的一些解答，代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。对我而言，高效不是首选的标准，清晰度才是。后续还会整合其他题库，如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
+> 这个仓库保存着我在 LeetCode 上的一些解答，代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。后续还会整合其他题库，如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
 
 ## 索引
 
@@ -80,7 +80,7 @@
 | 146  | [LRU Cache](https://leetcode.com/problems/lru-cache)         | [LRU缓存机制](https://leetcode-cn.com/problems/lru-cache)    | 困难 |               [Solution](./0146-LRU-Cache/src)               |  √   |           LRU 页面置换算法           |
 | 147  | [Insertion Sort List](https://leetcode.com/problems/insertion-sort-list) | [对链表进行插入排序](https://leetcode-cn.com/problems/insertion-sort-list) | 中等 |          [Solution](./0147-Insertion-Sort-List/src)          |  √   |                  -                   |
 | 148  | [Sort List](https://leetcode.com/problems/sort-list)         | [排序链表](https://leetcode-cn.com/problems/sort-list)       | 中等 |               [Solution](./0148-Sort-List/src)               |  √   |              排序、链表              |
-| 149  | [Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line) | [直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line) | 困难 |                              -                               |  ×   |                  -                   |
+| 149  | [Max Points on a Line](https://leetcode.com/problems/max-points-on-a-line) | [直线上最多的点数](https://leetcode-cn.com/problems/max-points-on-a-line) | 困难 |                              -                               |  ×   |             哈希表、数学             |
 | 150  | [Evaluate Reverse Polish Notation](https://leetcode.com/problems/evaluate-reverse-polish-notation) | [逆波兰表达式求值](https://leetcode-cn.com/problems/evaluate-reverse-polish-notation) | 中等 |   [Solution](./0150-Evaluate-Reverse-Polish-Notation/src)    |  √   |                  -                   |
 | 167  | [Two Sum II - Input array is sorted](https://leetcode.com/problems/two-sum-ii-input-array-is-sorted) | [两数之和 II - 输入有序数组](https://leetcode-cn.com/problems/two-sum-ii-input-array-is-sorted) | 简单 |   [Solution](./0167-Two-Sum-II-Input-array-is-sorted/src)    |  √   |                  -                   |
 | 198  | [House Robber](https://leetcode.com/problems/house-robber)   | [打家劫舍](https://leetcode-cn.com/problems/house-robber)    | 简单 |             [Solution](./0198-House-Robber/src)              |  √   |                  -                   |
