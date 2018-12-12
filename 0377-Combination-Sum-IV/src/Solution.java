@@ -45,6 +45,8 @@ class Solution {
 
     /**
      * 动态规划
+     *
+     * comb[target] = sum(comb[target - nums[i]]), where 0 <= i < nums.length, and target >= nums[i]
      */
     public int combinationSum4(int[] nums, int target) {
         int[] memo = new int[target + 1];
