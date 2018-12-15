@@ -1,5 +1,6 @@
-import java.util.HashMap;
-import java.util.Map;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
 class Solution {
@@ -7,28 +8,35 @@ class Solution {
      * 哈希表
      */
     public int singleNumber_1(int[] nums) {
-        Map<Integer, Integer> map = new HashMap<>();
+        Set<Integer> set = new HashSet<>();
         for (int num : nums) {
-            map.put(num, map.getOrDefault(num, 0) + 1);
+            if (set.contains(num)) {
+                set.remove(num);
+            } else {
+                set.add(num);
+            }
         }
         AtomicInteger res = new AtomicInteger();
-        map.forEach((num, count) -> {
-            if (count == 1) {
-                res.set(num);
-            }
-        });
+        set.forEach(res::set);
         return res.get();
     }
 
     /**
      * 位运算
      */
-    public int singleNumber(int[] nums) {
+    public int singleNumber_2(int[] nums) {
         int res = 0;
         for (int num : nums) {
             // 异或
             res ^= num;
         }
         return res;
+    }
+
+    /**
+     * 归约-位运算
+     */
+    public int singleNumber(int[] nums) {
+        return Arrays.stream(nums).reduce(0, (left, right) -> left ^ right);
     }
 }
