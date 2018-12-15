@@ -8,7 +8,7 @@ class Solution {
      * @param nums2
      * @return
      */
-    public int[] intersect1(int[] nums1, int[] nums2) {
+    public int[] intersect_1(int[] nums1, int[] nums2) {
         List<Integer> list1 = new ArrayList<>();
         for (int num : nums1) {
             list1.add(num);
@@ -36,7 +36,7 @@ class Solution {
      * @param nums2
      * @return
      */
-    public int[] intersect(int[] nums1, int[] nums2) {
+    public int[] intersect_2(int[] nums1, int[] nums2) {
         Map<Integer, Integer> map = new HashMap<>(nums1.length);
         // 现将 nums1 出现的数值及频次放入映射中
         for (int num : nums1) {
@@ -64,9 +64,30 @@ class Solution {
         return res;
     }
 
+    public int[] intersect(int[] nums1, int[] nums2) {
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+        List<Integer> list = new ArrayList<>();
+        for (int i = 0, j = 0; i < nums1.length && j < nums2.length; ) {
+            if (nums1[i] < nums2[j]) {
+                i++;
+            } else if (nums1[i] > nums2[j]) {
+                j++;
+            } else {
+                list.add(nums1[i]);
+                i++;
+                j++;
+            }
+        }
+        int[] res = new int[list.size()];
+        for (int i = 0; i < list.size(); i++) {
+            res[i] = list.get(i);
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.intersect1(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));
-        System.out.println(Arrays.toString(solution.intersect(new int[]{4, 9, 5}, new int[]{9, 4, 9, 8, 4})));
+        System.out.println(Arrays.toString(solution.intersect(new int[]{4, 9, 4,5}, new int[]{9, 4, 9, 8, 4})));
     }
 }
