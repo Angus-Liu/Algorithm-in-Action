@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 class Solution {
-    public void moveZeroes(int[] nums) {
+    public void moveZeroes_1(int[] nums) {
         // nums 中，[0,k)的元素为非 0 元素
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
@@ -17,7 +17,7 @@ class Solution {
         }
     }
 
-    public void moveZeroes2(int[] nums) {
+    public void moveZeroes_2(int[] nums) {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
@@ -30,7 +30,7 @@ class Solution {
         }
     }
 
-    public void moveZeroes3(int[] nums) {
+    public void moveZeroes(int[] nums) {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
@@ -44,7 +44,7 @@ class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] nums = new int[]{0, 1, 0, 3, 12};
+        int[] nums = new int[]{0, 0, 1};
         solution.moveZeroes(nums);
         System.out.println(Arrays.toString(nums));
     }
