@@ -5,7 +5,7 @@ class Solution {
         if(N == 0) {
             return cells;
         }
-        // 14 为一个循环
+        // 14 为一个循环，鬼知道我怎么想出来的
         int[][] nCells = new int[14][cells.length];
         nCells[0][0] = 0;
         nCells[0][cells.length - 1] = 0;
