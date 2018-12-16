@@ -4,12 +4,7 @@ import java.util.Map;
 
 class Solution {
     /**
-     * 查找表法
-     * 将所有元素放入查找表，之后对于每一个元素 a，查找 target - a 是否存在
-     *
-     * @param nums
-     * @param target
-     * @return
+     * 查找表法，将所有元素放入查找表，之后对于每一个元素 a，查找 target - a 是否存在
      */
     public int[] twoSum(int[] nums, int target) {
         Map<Integer, Integer> map = new HashMap<>();
@@ -20,12 +15,12 @@ class Solution {
             }
             map.put(nums[i], i);
         }
-        return new int[2];
+        throw new IllegalArgumentException("No solution");
     }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] twoSum = solution.twoSum(new int[]{2, 7, 11, 15}, 9);
+        int[] twoSum = solution.twoSum(new int[]{3,2,4}, 6);
         System.out.println(Arrays.toString(twoSum));
     }
 }
