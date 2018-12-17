@@ -1,5 +1,5 @@
 class Solution {
-    public String reverseString(String s) {
+    public String reverseString_1(String s) {
         if (s == null || s.length() == 0) {
             return s;
         }
@@ -16,6 +16,11 @@ class Solution {
         }
         return String.valueOf(chars);
     }
+
+    public String reverseString(String s) {
+        return new StringBuilder(s).reverse().toString();
+    }
+
 
     public static void main(String[] args) {
         Solution solution = new Solution();
