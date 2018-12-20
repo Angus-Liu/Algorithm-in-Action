@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.Queue;
 
 class Solution {
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder_1(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
         if (root == null) {
             return res;
@@ -35,30 +35,30 @@ class Solution {
         return res;
     }
 
-    public List<List<Integer>> levelOrder2(TreeNode root) {
-        List<List<Integer>> list = new LinkedList<List<Integer>>();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        List<List<Integer>> list = new LinkedList<>();
         if (root == null) {
             return list;
         }
-        //创建一个队列，用于存放所有节点
-        Queue<TreeNode> currentLevel = new LinkedList<TreeNode>();
+        // 创建一个队列，用于存放所有节点
+        Queue<TreeNode> currentLevel = new LinkedList<>();
         currentLevel.add(root);
         while (!currentLevel.isEmpty()) {
-            //创建一个List记录当前层所有节点值
-            List<Integer> currentList = new LinkedList<Integer>();
+            // 创建一个List记录当前层所有节点值
+            List<Integer> currentList = new LinkedList<>();
             int size = currentLevel.size();
             for (int i = 0; i < size; i++) {
-                //poll()获取并移除此列表的头结点
+                // poll()获取并移除此列表的头结点
                 TreeNode currentNode = currentLevel.poll();
                 currentList.add(currentNode.val);
-                //记录每一层的节点值到List<Integer>中
+                // 记录每一层的节点值到List<Integer>中
                 if (currentNode.left != null) {
                     currentLevel.add(currentNode.left);
                 }
                 if (currentNode.right != null) {
                     currentLevel.add(currentNode.right);
                 }
-                //将当前List<Integer>添加到List<List<Integer>>中
+                // 将当前List<Integer>添加到List<List<Integer>>中
             }
             list.add(currentList);
         }
