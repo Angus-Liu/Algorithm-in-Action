@@ -5,10 +5,6 @@ class Solution {
 
     /**
      * 该方法亦可用以比较两棵树是否对称
-     *
-     * @param root1
-     * @param root2
-     * @return
      */
     private boolean isSymmetric(TreeNode root1, TreeNode root2) {
         if (root1 == null && root2 == null) {
