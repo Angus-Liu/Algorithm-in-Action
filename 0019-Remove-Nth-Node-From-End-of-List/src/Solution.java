@@ -1,10 +1,9 @@
-import java.util.List;
-
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         // 使用虚拟头结点以及滑动窗口（大小为 n + 2）来解决
         ListNode dummyHead = new ListNode(0);
         dummyHead.next = head;
+        // 双指针
         ListNode p = dummyHead;
         ListNode q = dummyHead;
         for (int i = 0; i < n + 1; i++) {
