@@ -36,10 +36,10 @@ class Solution {
                 } else {
                     nums1[i] = nums2[k++];
                 }
-            } else if (j < m + n) {
-                nums1[i] = nums1[j++];
             } else if (k < n) {
                 nums1[i] = nums2[k++];
+            } else {
+                break;
             }
         }
     }
