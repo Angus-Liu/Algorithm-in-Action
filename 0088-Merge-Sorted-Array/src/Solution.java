@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public void merge_1(int[] nums1, int m, int[] nums2, int n) {
         int[] nums1_back = new int[m];
         for (int i = 0; i < m; i++) {
             nums1_back[i] = nums1[i];
@@ -25,10 +25,29 @@ class Solution {
         }
     }
 
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        for (int i = m - 1; i >= 0; i--) {
+            nums1[i + n] = nums1[i];
+        }
+        for (int i = 0, j = n, k = 0; i < m + n; i++) {
+            if (j < m + n && k < n) {
+                if (nums1[j] <= nums2[k]) {
+                    nums1[i] = nums1[j++];
+                } else {
+                    nums1[i] = nums2[k++];
+                }
+            } else if (j < m + n) {
+                nums1[i] = nums1[j++];
+            } else if (k < n) {
+                nums1[i] = nums2[k++];
+            }
+        }
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] nums1 = {1,2,3,0,0,0};
-        int[] nums2 = {2,5,6};
+        int[] nums1 = {1, 2, 3, 0, 0, 0};
+        int[] nums2 = {2, 5, 6};
         solution.merge(nums1, 3, nums2, 3);
         System.out.println(Arrays.toString(nums1));
     }
