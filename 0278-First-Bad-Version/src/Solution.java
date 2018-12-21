@@ -1,5 +1,4 @@
 public class Solution extends VersionControl {
-
     public int firstBadVersion(int n) {
         // 二分查找的应用
         int l = 1;
