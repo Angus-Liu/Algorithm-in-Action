@@ -7,7 +7,7 @@ public class Solution extends VersionControl {
         while (l < r) {
             int mid = l + (r - l) / 2;
             if (isBadVersion(mid)) {
-                // 没用 mid - 1，是以为 mid - 1 可能不是 BadVersion，因此需要保留 mid
+                // 没用 mid - 1，是因为 mid - 1 可能不是 BadVersion，因此需要保留 mid
                 r = mid;
             } else {
                 l = mid + 1;
