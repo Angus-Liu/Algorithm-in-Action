@@ -16,7 +16,7 @@ class Solution {
      * @param nums
      * @return
      */
-    public int rob1(int[] nums) {
+    public int rob_1(int[] nums) {
         memo = new int[nums.length];
         Arrays.fill(memo, -1);
         return tryRob(nums, 0);
@@ -45,7 +45,7 @@ class Solution {
      * @param nums
      * @return
      */
-    public int rob(int[] nums) {
+    public int rob_2(int[] nums) {
         int n = nums.length;
         if (n == 0) {
             return 0;
@@ -61,8 +61,18 @@ class Solution {
         return memo[0];
     }
 
+    public int rob(int[] nums) {
+        int n = nums.length;
+        if (n <= 1) return n == 0 ? 0 : nums[0];
+        int[] memo = new int[n];
+        memo[0] = nums[0];
+        memo[1] = Math.max(nums[0], nums[1]);
+        for (int i = 2; i < n; i++)
+            memo[i] = Math.max(memo[i - 1], nums[i] + memo[i - 2]);
+        return memo[n - 1];
+    }
 
     public static void main(String[] args) {
-        System.out.println(new Solution().rob(new int[]{2, 7, 9, 3, 1}));
+        System.out.println(new Solution().rob(new int[]{7, 99, 9, 3, 1}));
     }
 }
