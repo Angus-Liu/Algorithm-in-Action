@@ -14,7 +14,6 @@ class Solution {
         return res;
     }
 
-
     public static void main(String[] args) {
         int[] nums = new int[]{1, 2};
         System.out.println(new Solution().maxSubArray(nums));
