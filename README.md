@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="assets/Algorithm-in-Action-logo.png" width="280" alt="logo">
+	<img src="assets/Algorithm-in-Action-logo.png" width="280" alt="Algorithm in Action">
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="license">
@@ -12,6 +12,7 @@
 		<img src="https://img.shields.io/badge/剑指Offer-1/64-ff5959.svg?style=popout-square" alt="剑指Offer">
 	</a>
 </p>
+
 
 
 # Algorithm in Action
