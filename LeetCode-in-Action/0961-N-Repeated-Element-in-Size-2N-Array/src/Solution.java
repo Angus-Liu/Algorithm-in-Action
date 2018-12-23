@@ -1,16 +1,25 @@
-import java.util.NoSuchElementException;
+import java.util.Arrays;
 
 class Solution {
-    public int repeatedNTimes(int[] A) {
+    public int repeatedNTimes_1(int[] A) {
+        int res = A[0];
         int[] countArr = new int[10000];
         for (int i : A) {
             countArr[i]++;
-        }
-        for (int i = 0; i < countArr.length; i++) {
             if (countArr[i] == A.length / 2) {
-                return i;
+                res = i;
+                break;
             }
         }
-        throw new NoSuchElementException("no result");
+        return res;
+    }
+
+    public int repeatedNTimes(int[] A) {
+        Arrays.sort(A);
+        return A[A.length / 2] == A[A.length - 1] ? A[A.length - 1] : A[A.length / 2 - 1];
+    }
+
+    public static void main(String[] args) {
+        System.out.println(new Solution().repeatedNTimes(new int[]{1, 2, 3, 3}));
     }
 }
