@@ -1,10 +1,18 @@
 <p align="center">
-	<img src="assets/Algorithm-in-Action-logo.png" width="280" alt="Algorithm in Action">
+    <a href="#">
+		<img src="assets/Algorithm-in-Action-logo.png" width="280" alt="Algorithm in Action">
+    </a>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="license">
-    <img src="https://img.shields.io/github/languages/top/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="languages">
-    <img src="https://img.shields.io/github/last-commit/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="last commit">
+    <a href="./LICENSE">
+		<img src="https://img.shields.io/github/license/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="license">
+    </a>
+    <a href="#">
+    	<img src="https://img.shields.io/github/languages/top/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="languages">
+    </a>
+    <a href="#">
+    	<img src="https://img.shields.io/github/last-commit/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="last commit">
+    </a>
 	<a href="./LeetCode-in-Action#leetcode-in-action">
 		<img src="https://img.shields.io/badge/LeetCode-164/953-FDA116.svg?style=popout-square" alt="LeetCode">
 	</a>
