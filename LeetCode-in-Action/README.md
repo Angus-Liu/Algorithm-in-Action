@@ -2,11 +2,11 @@
 
 > Some of my practices on LeetCode : )
 >
-> 这个仓库保存着我在 LeetCode 上的一些解答，代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。后续还会整合其他题库，如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
+> 这个仓库保存着我在 LeetCode 上的一些解答，代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
 
 ## 索引
 
-| 题号 | 索引                                                         | 难度 |                             解答                             | 状态 |                 备注                 |
+| 题号 | 题目                                                         | 难度 |                             解答                             | 状态 |               相关话题               |
 | :--: | ------------------------------------------------------------ | :--: | :----------------------------------------------------------: | :--: | :----------------------------------: |
 |  1   | [Two Sum](https://leetcode.com/problems/two-sum)<br/>[两数之和](https://leetcode-cn.com/problems/two-sum) | 简单 |                [Solution](./0001-Two-Sum/src)                |  √   |             数组、哈希表             |
 |  2   | [Add Two Numbers](https://leetcode.com/problems/add-two-numbers)<br>[两数相加](https://leetcode-cn.com/problems/add-two-numbers) | 中等 |            [Solution](./0002-Add-Two-Numbers/src)            |  √   |                  -                   |
