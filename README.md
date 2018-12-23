@@ -4,7 +4,7 @@
 <p align="center">
 	<img src="https://img.shields.io/github/license/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="license">
     <img src="https://img.shields.io/github/languages/top/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="languages">
-    <img src="https://img.shields.io/github/last-commit/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="commit">
+    <img src="https://img.shields.io/github/last-commit/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="last commit">
 	<a href="./LeetCode-in-Action">
 		<img src="https://img.shields.io/badge/LeetCode-164/953-FDA116.svg?style=popout-square" alt="LeetCode">
 	</a>
@@ -12,6 +12,7 @@
 		<img src="https://img.shields.io/badge/剑指Offer-1/64-ff5959.svg?style=popout-square" alt="剑指Offer">
 	</a>
 </p>
+
 
 
 
