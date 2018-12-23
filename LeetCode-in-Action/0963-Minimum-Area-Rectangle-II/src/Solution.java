@@ -26,10 +26,12 @@ class Solution {
                 if (point1 != point2) {
                     x2 = point2[0];
                     y2 = point2[1];
-                    // 再看另外两个点是否存在（另一条对角线或是平行线）
-                    if (contain(x1, y2) && contain(x2, y1)) {
-                        System.out.println("x1=" + x1 + ", y1=" + x2);
-                        res = Math.min(res, Math.abs(x1 - x2) * Math.abs(y1 - y2));
+                    if (y1 != y2) {
+                        // 再看另外两个点是否存在（另一条对角线或是平行线）
+                        if (contain(x1, y2) && contain(x2, y1)) {
+                            System.out.println("[" + x1 + "," + y1 + "] [" + x1 + "," + y2 + "] [" + x2 + "," + y2 + "] [" + x2 + "," + y1 + "]");
+                            res = Math.min(res, Math.abs(x1 - x2) * Math.abs(y1 - y2));
+                        }
                     }
                 }
             }

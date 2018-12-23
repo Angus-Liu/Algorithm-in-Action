@@ -180,4 +180,5 @@
 | 960  | [Delete Columns to Make Sorted III](https://leetcode.com/problems/delete-columns-to-make-sorted-iii/)<br />[删列造序](https://leetcode-cn.com/problems/delete-columns-to-make-sorted-iii/) | 困难 |                              -                               |  ×   |                  -                   |
 | 961  | [N-Repeated Element in Size 2N Array](https://leetcode.com/problems/n-repeated-element-in-size-2n-array/)<br/>[重复 N 次的元素](https://leetcode-cn.com/problems/n-repeated-element-in-size-2n-array/) | 简单 |  [Solution](./0961-N-Repeated-Element-in-Size-2N-Array/src)  |  √   |                哈希表                |
 | 962  | [Maximum Width Ramp](https://leetcode.com/problems/maximum-width-ramp/)<br/>[最大宽度坡](https://leetcode-cn.com/problems/maximum-width-ramp/) | 中等 |          [Solution](./0962-Maximum-Width-Ramp/src)           |  √   |                 数组                 |
+| 963  | [Minimum Area Rectangle II](https://leetcode.com/problems/minimum-area-rectangle-ii/)<br/>[最小面积矩形 II](https://leetcode-cn.com/problems/minimum-area-rectangle-ii/) | 中等 |                              -                               |  ×   |              几何、数学              |
 
