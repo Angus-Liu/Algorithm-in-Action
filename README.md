@@ -7,10 +7,10 @@
     <a href="./LICENSE">
 		<img src="https://img.shields.io/github/license/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="license">
     </a>
-    <a href="/search?l=java">
+    <a href="https://github.com/Angus-Liu/Algorithm-in-Action/search?l=java">
     	<img src="https://img.shields.io/github/languages/top/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="languages">
     </a>
-    <a href="/commits">
+    <a href="https://github.com/Angus-Liu/Algorithm-in-Action/commits">
     	<img src="https://img.shields.io/github/last-commit/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="last commit">
     </a>
 	<a href="./LeetCode-in-Action#leetcode-in-action">
