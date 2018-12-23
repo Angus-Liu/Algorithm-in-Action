@@ -17,6 +17,7 @@ class Solution {
         return res;
     }
 
+    // TODO: 待优化，效率较差
     public int maxWidthRamp(int[] A) {
         int res = 0;
         // 记录上一次最大结果的右边界
@@ -26,6 +27,7 @@ class Solution {
                 if (A[l] <= A[r]) {
                     res = Math.max(res, r - l);
                     rBound = r;
+                    break;
                 }
             }
         }
