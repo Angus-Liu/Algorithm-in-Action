@@ -5,11 +5,11 @@
 	<img src="https://img.shields.io/github/license/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="license">
     <img src="https://img.shields.io/github/languages/top/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="languages">
     <img src="https://img.shields.io/github/last-commit/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="last commit">
-	<a href="./LeetCode-in-Action">
+	<a href="./LeetCode-in-Action#leetcode-in-action">
 		<img src="https://img.shields.io/badge/LeetCode-164/953-FDA116.svg?style=popout-square" alt="LeetCode">
 	</a>
-	<a href="./JianZhiOffer-in-Action">
-		<img src="https://img.shields.io/badge/剑指Offer-1/64-ff5959.svg?style=popout-square" alt="剑指Offer">
+	<a href="./JianZhiOffer-in-Action#剑指-offer-实战">
+		<img src="https://img.shields.io/badge/剑指Offer-1/66-ff5959.svg?style=popout-square" alt="剑指Offer">
 	</a>
 </p>
 
@@ -17,7 +17,7 @@
 
 # Algorithm in Action
 
-> Some of my practices on Algorithms : ) 这个仓库保存着我在 [**LeetCode**](./LeetCode-in-Action)、[**剑指Offer**](./JianZhiOffer-in-Action) 上的一些解答，代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。后续还会整合其他题库，如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
+> Some of my practices on Algorithms : ) 这个仓库保存着我在 [**LeetCode**](./LeetCode-in-Action#leetcode-in-action)、[**剑指Offer**](./JianZhiOffer-in-Action#剑指-offer-实战) 上的一些解答，代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。后续还会整合其他题库，如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
 
 
 ## LICENSE
