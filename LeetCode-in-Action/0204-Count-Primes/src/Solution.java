@@ -12,7 +12,7 @@ class Solution {
             boolean isPrime = true;
             for (int j = 0; j < primeList.size(); j++) {
                 int prime = primeList.get(j);
-                if (prime * prime > j) {
+                if (prime * prime > i) {
                     break;
                 }
                 if (i % prime == 0) {
