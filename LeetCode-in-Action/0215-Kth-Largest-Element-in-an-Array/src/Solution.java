@@ -24,7 +24,7 @@ class Solution {
             // 排名靠前，在前半部分找
             return findKthLargest(nums, k, l, j - 1);
         } else {
-            // 靠后吗，在后半部分找
+            // 靠后，在后半部分找
             return findKthLargest(nums, k, j + 1, r);
         }
     }
@@ -35,7 +35,7 @@ class Solution {
         arr[j] = temp;
     }
 
-    public int findKthLargest2(int[] nums, int k) {
+    public int findKthLargest_2(int[] nums, int k) {
         Arrays.sort(nums);
         return nums[nums.length - k];
     }
