@@ -1,7 +1,7 @@
 import java.util.Arrays;
 
 class Solution {
-    public int removeDuplicates(int[] nums) {
+    public int removeDuplicates_1(int[] nums) {
         int j = 0;
         for (int i = 0; i < nums.length; i++) {
             if (j < 2) {
@@ -15,6 +15,16 @@ class Solution {
             }
         }
         return j;
+    }
+
+    public int removeDuplicates(int[] nums) {
+        int i = 0;
+        for (int num : nums) {
+            if (i < 2 || num != nums[i-2]) {
+                nums[i++] = num;
+            }
+        }
+        return i;
     }
 
     public static void main(String[] args) {
