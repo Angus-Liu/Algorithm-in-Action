@@ -1,4 +1,33 @@
+import java.util.Arrays;
+import java.util.List;
+
 class Solution {
+
+    public String reverseVowels_1(String s) {
+        if (s == null || s.length() == 0) {
+            return s;
+        }
+        List<Character> vowelList = Arrays.asList('a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U');
+        // 对撞指针实现
+        char[] chars = s.toCharArray();
+        for (int l = 0, r = s.length() - 1; l < r;) {
+            if (vowelList.contains(chars[l])) {
+                if (vowelList.contains(chars[r])) {
+                    char temp = chars[l];
+                    chars[l] = chars[r];
+                    chars[r] = temp;
+                    l++;
+                    r--;
+                } else {
+                    r--;
+                }
+            } else {
+                l++;
+            }
+        }
+        return String.valueOf(chars);
+    }
+
     public String reverseVowels(String s) {
         if (s == null || s.length() == 0) {
             return s;
