@@ -12,21 +12,20 @@ class Solution {
      */
     public int maxArea(int[] height) {
         int maxArea = 0;
-        int l = 0;
-        int r = height.length - 1;
-        while (l < r) {
-            int area;
-            if (height[l] < height[r]) {
-                area = height[l] * (r - l);
-                l++;
+        int area;
+        for (int lo = 0, hi = height.length - 1; lo < hi; ) {
+            if (height[lo] < height[hi]) {
+                area = height[lo] * (hi - lo);
+                lo++;
             } else {
-                area = height[r] * (r - l);
-                r--;
+                area = height[hi] * (hi - lo);
+                hi--;
             }
-            maxArea = area > maxArea ? area : maxArea;
+            maxArea = Math.max(maxArea, area);
         }
         return maxArea;
     }
+
 
     public static void main(String[] args) {
         Solution solution = new Solution();
