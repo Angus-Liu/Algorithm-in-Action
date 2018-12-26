@@ -2,7 +2,7 @@ import java.util.Arrays;
 
 class Solution {
 
-    public void sortColors(int[] nums) {
+    public void sortColors_1(int[] nums) {
         // 利用三路快排的思想，只需要一次遍历就完成排序
         // nums[0, zero] == 0，初始时为空，所以 zero 为 -1
         int zero = -1;
@@ -23,13 +23,26 @@ class Solution {
 
     }
 
+    public void sortColors_2(int[] nums) {
+        int zero = 0, one = 0, two = nums.length - 1;
+        while(one <= two) {
+            if (nums[one] == 0) {
+                swap(nums, zero++, one++);
+            } else if (nums[one] == 1) {
+                one++;
+            } else {
+                swap(nums, one, two--);
+            }
+        }
+    }
+
     private void swap(int[] arr, int i, int j) {
         int temp = arr[i];
         arr[i] = arr[j];
         arr[j] = temp;
     }
 
-    public void sortColors2(int[] nums) {
+    public void sortColors(int[] nums) {
         int[] count = new int[3];
         // 计数排序法
         for (int i = 0; i < nums.length; i++) {
