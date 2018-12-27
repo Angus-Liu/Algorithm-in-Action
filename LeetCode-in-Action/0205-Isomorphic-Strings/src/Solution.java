@@ -9,7 +9,7 @@ class Solution {
      * @param t
      * @return
      */
-    public boolean isIsomorphic(String s, String t) {
+    public boolean isIsomorphic_1(String s, String t) {
         char[] sChars = s.toCharArray();
         char[] tChars = t.toCharArray();
         Map<Character, Character> map = new HashMap<>();
@@ -30,7 +30,7 @@ class Solution {
         return true;
     }
 
-    public boolean isIsomorphic2(String s, String t) {
+    public boolean isIsomorphic(String s, String t) {
         int[] pos1 = new int[256];
         int[] pos2 = new int[256];
         for (int i = s.length() - 1; i >= 0; --i) {
