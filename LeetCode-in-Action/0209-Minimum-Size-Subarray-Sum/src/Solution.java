@@ -9,7 +9,7 @@ class Solution {
         int r = -1;
         // len 初始化为一个不可能的取值
         int len = nums.length + 1;
-        // sum 为窗口中的元素值
+        // sum 为窗口中的元素值的和
         int sum = 0;
         while (l < nums.length) {
             if (sum < s) {
@@ -17,8 +17,6 @@ class Solution {
                 if (r + 1 < nums.length) {
                     r++;
                     sum += nums[r];
-                } else {
-                    break;
                 }
             } else {
                 // sum >= s, 窗口向右滑动
