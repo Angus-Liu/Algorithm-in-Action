@@ -40,7 +40,6 @@ class Solution {
         queue.add(0);
         int step = 1;
         boolean[] visited = new boolean[n + 1];
-        visited[0] = true;
         while (!queue.isEmpty()) {
             for (int i = queue.size(); i > 0; i--) {
                 int cur = queue.remove();
