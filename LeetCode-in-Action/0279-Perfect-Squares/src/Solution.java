@@ -4,10 +4,10 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class Solution {
-    public int numSquares(int n) {
+    public int numSquares_1(int n) {
         Queue<Pair<Integer, Integer>> queue = new LinkedList<>();
         queue.add(new Pair<>(n, 0));
-        // 访问数组，用以防止冗余访问
+        // 访问数组，用以防止重复访问
         boolean[] visited = new boolean[n + 1];
         visited[n] = true;
         while (!queue.isEmpty()) {
@@ -35,8 +35,36 @@ class Solution {
         throw new IllegalArgumentException("No Solution");
     }
 
+    public int numSquares(int n) {
+        Queue<Integer> queue = new LinkedList<>();
+        queue.add(0);
+        int step = 1;
+        boolean[] visited = new boolean[n + 1];
+        visited[0] = true;
+        while (!queue.isEmpty()) {
+            for (int i = queue.size(); i > 0; i--) {
+                int cur = queue.remove();
+                for (int j = 1; ; j++) {
+                    int next = cur + j * j;
+                    if (next > n) {
+                        break;
+                    } else if (next == n) {
+                        return step;
+                    }
+                    if (!visited[next]) {
+                        queue.add(next);
+                        visited[next] = true;
+                    }
+                }
+            }
+            step++;
+        }
+        throw new IllegalArgumentException("No Solution");
+    }
+
+
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(solution.numSquares(12));
+        System.out.println(solution.numSquares(7168));
     }
 }
