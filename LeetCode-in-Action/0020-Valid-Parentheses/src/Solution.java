@@ -3,8 +3,7 @@ import java.util.Stack;
 class Solution {
     public boolean isValid(String s) {
         Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
+        for (char c : s.toCharArray()) {
             // 先将所有左括号入栈，用以后续匹配右括号
             if (c == '(' || c == '[' || c == '{') {
                 stack.push(c);
@@ -15,13 +14,9 @@ class Solution {
                 }
                 // 将栈中左括号弹出，与右括号进行匹配
                 char topChar = stack.pop();
-                if (topChar == '(' && c != ')') {
-                    return false;
-                }
-                if (topChar == '[' && c != ']') {
-                    return false;
-                }
-                if (topChar == '{' && c != '}') {
+                if ((topChar == '(' && c != ')')
+                        || (topChar == '[' && c != ']')
+                        || (topChar == '{' && c != '}')) {
                     return false;
                 }
             }
