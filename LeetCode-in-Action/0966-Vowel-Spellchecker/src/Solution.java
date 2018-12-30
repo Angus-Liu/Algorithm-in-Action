@@ -12,6 +12,8 @@ class Solution {
             wordPatternMap.putIfAbsent(word.toLowerCase(), word);
             wordPatternMap.putIfAbsent(wordPattern(word), word);
         }
+        // System.out.println(wordMap);
+        // System.out.println(wordPatternMap);
         for (int i = 0; i < queries.length; i++) {
             if (wordMap.containsKey(queries[i])) {
                 queries[i] = wordMap.get(queries[i]);
@@ -33,7 +35,7 @@ class Solution {
     }
 
     private String wordPattern(String word) {
-        // return word.toLowerCase().replaceAll("a|e|i|o|u", "*");
+        // return word.toLowerCase().replaceAll("[aeiou]", "*");
         char[] letters = word.toLowerCase().toCharArray();
         for (int i = 0; i < letters.length; i++) {
             if (letters[i] == 'a'
@@ -44,7 +46,7 @@ class Solution {
                 letters[i] = '*';
             }
         }
-        return new String(letters);
+        return String.valueOf(letters);
     }
 
     public static void main(String[] args) {
