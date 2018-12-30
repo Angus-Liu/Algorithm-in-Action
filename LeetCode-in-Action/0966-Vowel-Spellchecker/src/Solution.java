@@ -12,8 +12,6 @@ class Solution {
             wordPatternMap.putIfAbsent(word.toLowerCase(), word);
             wordPatternMap.putIfAbsent(wordPattern(word), word);
         }
-        // System.out.println(wordMap);
-        // System.out.println(wordPatternMap);
         for (int i = 0; i < queries.length; i++) {
             if (wordMap.containsKey(queries[i])) {
                 queries[i] = wordMap.get(queries[i]);
