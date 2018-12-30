@@ -17,13 +17,14 @@ public class Solution {
             return null;
         }
         UndirectedGraphNode newNode = map.get(node.label);
-        if (newNode != null) {
-            return newNode;
-        }
-        newNode = new UndirectedGraphNode(node.label);
-        map.put(newNode.label, newNode);
-        for (UndirectedGraphNode tempNode : node.neighbors) {
-            newNode.neighbors.add(cloneGraph(tempNode));
+        // 深度遍历，克隆 node
+        if (newNode == null) {
+            newNode = new UndirectedGraphNode(node.label);
+            // 先放入 map 中，避免自环引起栈溢出
+            map.put(newNode.label, newNode);
+            for (UndirectedGraphNode neighborNode : node.neighbors) {
+                newNode.neighbors.add(cloneGraph(neighborNode));
+            }
         }
         return newNode;
     }
