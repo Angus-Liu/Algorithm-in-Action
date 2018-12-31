@@ -8,30 +8,24 @@ class Solution {
 
     /**
      * 递归实现
-     *
-     * @param root
-     * @return
      */
-    public List<Integer> inorderTraversal1(TreeNode root) {
+    public List<Integer> inorderTraversal_1(TreeNode root) {
         if (root != null) {
-            inorderTraversal1(root.left);
+            inorderTraversal_1(root.left);
             list.add(root.val);
-            inorderTraversal1(root.right);
+            inorderTraversal_1(root.right);
         }
         return list;
     }
 
     /**
-     * 迭代实现
-     *
-     * @param root
-     * @return
+     * 迭代实现（借助栈的非递归实现）
      */
     public List<Integer> inorderTraversal(TreeNode root) {
-        // 借助栈的非递归实现
         Stack<TreeNode> stack = new Stack<>();
         TreeNode node = root;
         while (node != null || !stack.empty()) {
+            // 一路压入最后一个子树的左孩子
             while (node != null) {
                 stack.push(node);
                 node = node.left;
