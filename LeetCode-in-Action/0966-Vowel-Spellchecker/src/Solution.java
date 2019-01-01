@@ -1,8 +1,11 @@
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Pattern;
 
 class Solution {
+
+    private Pattern pattern = Pattern.compile("[aeiou]");
 
     public String[] spellchecker(String[] wordlist, String[] queries) {
         Map<String, String> wordMap = new HashMap<>();
@@ -35,7 +38,7 @@ class Solution {
     }
 
     private String wordPattern(String word) {
-        // return word.toLowerCase().replaceAll("[aeiou]", "*");
+        // return pattern.matcher(word.toLowerCase()).replaceAll("*");
         char[] letters = word.toLowerCase().toCharArray();
         for (int i = 0; i < letters.length; i++) {
             if (letters[i] == 'a'
