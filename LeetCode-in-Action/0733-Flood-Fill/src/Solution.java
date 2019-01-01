@@ -37,20 +37,18 @@ class Solution {
             return image;
         }
         int oldColor = image[sr][sc];
-        Queue<Pair<Integer, Integer>> queue = new LinkedList<>();
-        queue.add(new Pair<>(sr, sc));
+        Queue<int[]> queue = new LinkedList<>();
+        queue.add(new int[]{sr, sc});
         while (!queue.isEmpty()) {
-            Pair<Integer, Integer> pair = queue.poll();
-            sr = pair.getKey();
-            sc = pair.getValue();
-            image[sr][sc] = newColor;
+            int[] s = queue.poll();
+            image[s[0]][s[1]] = newColor;
             for (int i = 0; i < 4; i++) {
-                int nr = sr + vector[i][0];
-                int nc = sc + vector[i][1];
+                int nr = s[0] + vector[i][0];
+                int nc = s[1] + vector[i][1];
                 if (nr >= 0 && nr < image.length
                         && nc >= 0 && nc < image[0].length
                         && image[nr][nc] == oldColor) {
-                    queue.add(new Pair<>(nr, nc));
+                    queue.add(new int[]{nr, nc});
                 }
             }
         }
