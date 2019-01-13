@@ -215,4 +215,5 @@
 | 965  | [Univalued Binary Tree](https://leetcode.com/problems/univalued-binary-tree/)<br/>[单值二叉树](https://leetcode-cn.com/problems/univalued-binary-tree/) | 简单 |         [Solution](./0965-Univalued-Binary-Tree/src)         |  √   |                  -                   |
 | 966  | [Vowel Spellchecker](https://leetcode.com/problems/vowel-spellchecker/)<br/>[元音拼写检查器](https://leetcode-cn.com/problems/vowel-spellchecker/) | 中等 |          [Solution](./0966-Vowel-Spellchecker/src)           |  √   |                  -                   |
 | 967  | [Numbers With Same Consecutive Differences](https://leetcode.com/problems/numbers-with-same-consecutive-differences/)<br/>[连续差相同的数字](https://leetcode-cn.com/problems/numbers-with-same-consecutive-differences/) | 中等 | [Solution](./0967-Numbers-With-Same-Consecutive-Differences/src) |  √   |                  -                   |
+| 973  | [K Closest Points to Origin](https://leetcode.com/problems/k-closest-points-to-origin/)<br/>[最接近原点的 K 个点](https://leetcode-cn.com/problems/k-closest-points-to-origin/) | 简单 |      [Solution](./0973-K-Closest-Points-to-Origin/src)       |  √   |          数学、分治法、排序          |
 
