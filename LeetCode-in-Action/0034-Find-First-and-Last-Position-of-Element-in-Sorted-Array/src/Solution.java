@@ -36,11 +36,11 @@ class Solution {
      * 二分查找 + 遍历
      */
     public int[] searchRange(int[] nums, int target) {
+        int startIndex = -1, endIndex = -1;
         if (nums == null || nums.length == 0) {
-            return new int[]{-1, -1};
+            return new int[]{startIndex, endIndex};
         }
         int l = 0, r = nums.length - 1, m = 0;
-        int startIndex = -1, endIndex = -1;
         while (l <= r) {
             // 以下代码加上后效率会有所提升
             // if(nums[l] == target && nums[r] == target)
