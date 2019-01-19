@@ -16,7 +16,7 @@ class Solution {
             if ((power & 1) == 1) {
                 res *= x;
             }
-            x = x * x;
+            x *= x;
             power >>= 1;
         }
         return n < 0 ? 1 / res : res;
