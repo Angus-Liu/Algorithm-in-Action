@@ -14,7 +14,7 @@
     	<img src="https://img.shields.io/github/last-commit/Angus-Liu/Algorithm-in-Action.svg?style=popout-square" alt="last commit">
     </a>
 	<a href="./LeetCode-in-Action#leetcode-in-action">
-		<img src="https://img.shields.io/badge/LeetCode-200/966-FDA116.svg?style=popout-square" alt="LeetCode">
+		<img src="https://img.shields.io/badge/LeetCode-211/970-FDA116.svg?style=popout-square" alt="LeetCode">
 	</a>
 	<a href="./JianZhiOffer-in-Action#剑指-offer-实战">
 		<img src="https://img.shields.io/badge/剑指Offer-1/66-ff5959.svg?style=popout-square" alt="剑指Offer">
