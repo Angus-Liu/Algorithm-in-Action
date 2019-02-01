@@ -10,6 +10,7 @@ public class Solution {
         } else if (array[mid] < array[left]) {
             return binarySearch(array, left, mid);
         } else {
+            // array[mid] > array[right]
             return binarySearch(array, mid + 1, right);
         }
     }
