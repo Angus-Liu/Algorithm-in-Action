@@ -1,6 +1,6 @@
 public class Solution {
     /**
-     * 斐波拉切数列的应用
+     * 斐波那契数列的应用
      *
      * @param target
      * @return
