@@ -17,9 +17,10 @@
 		<img src="https://img.shields.io/badge/LeetCode-212/971-FDA116.svg?style=popout-square" alt="LeetCode">
 	</a>
 	<a href="./JianZhiOffer">
-		<img src="https://img.shields.io/badge/剑指Offer-10/66-ff5959.svg?style=popout-square" alt="剑指Offer">
+		<img src="https://img.shields.io/badge/剑指Offer-20/66-ff5959.svg?style=popout-square" alt="剑指Offer">
 	</a>
 </p>
+
 
 
 
