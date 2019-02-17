@@ -1,7 +1,7 @@
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
+        import java.util.Arrays;
+        import java.util.List;
+        import java.util.stream.Collectors;
 
 public class Solution {
     public boolean VerifySquenceOfBST(int[] sequence) {
@@ -33,11 +33,5 @@ public class Solution {
             return false;
         }
         return verifySquence(leftSeq) && verifySquence(rightSeq);
-    }
-
-    public static void main(String[] args) {
-        int[] sequence = {4, 8, 6, 12, 16, 14, 10};
-        boolean res = new Solution().VerifySquenceOfBST(sequence);
-        System.out.println(res);
     }
 }
