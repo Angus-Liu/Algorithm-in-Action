@@ -1,42 +1,26 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Solution {
+
+    private List<TreeNode> nodes = new ArrayList<>();
+
     public TreeNode Convert(TreeNode pRootOfTree) {
-        if (pRootOfTree != null) {
-            TreeNode leftNode = convert(pRootOfTree.left, true);
-            pRootOfTree.left = leftNode;
-            if (leftNode != null) {
-                leftNode.right = pRootOfTree;
-            }
-            TreeNode rightNode = convert(pRootOfTree.right, false);
-            pRootOfTree.right = rightNode;
-            if (rightNode != null) {
-                rightNode.left = pRootOfTree;
-            }
-            // 需要返回新的头节点
-            while (pRootOfTree.left != null) {
-                pRootOfTree = pRootOfTree.left;
-            }
+        if (pRootOfTree == null) return null;
+        inOrderTraverse(pRootOfTree);
+        for (int i = 0; i < nodes.size(); i++) {
+            if (i - 1 >= 0)
+                nodes.get(i).left = nodes.get(i - 1);
+            if (i + 1 < nodes.size())
+                nodes.get(i).right = nodes.get(i + 1);
         }
-        return pRootOfTree;
+        return nodes.get(0);
     }
 
-    private TreeNode convert(TreeNode node, boolean isLeftChild) {
-        if (node == null) {
-            return null;
-        }
-        TreeNode leftNode = convert(node.left, true);
-        node.left = leftNode;
-        if (leftNode != null) {
-            leftNode.right = node;
-        }
-        TreeNode rightNode = convert(node.right, false);
-        node.right = rightNode;
-        if (rightNode != null) {
-            rightNode.left = node;
-        }
-        if (isLeftChild) {
-            return node.left == null ? node : leftNode;
-        } else {
-            return node.right == null ? node : rightNode;
-        }
+    private void inOrderTraverse(TreeNode node) {
+        if (node == null) return;
+        inOrderTraverse(node.left);
+        nodes.add(node);
+        inOrderTraverse(node.right);
     }
 }
