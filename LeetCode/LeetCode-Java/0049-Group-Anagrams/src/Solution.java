@@ -8,16 +8,12 @@ class Solution {
             char[] chars = str.toCharArray();
             Arrays.sort(chars);
             // 将每个字符串对应字符数组经排序后得到的字符串作为该字符串的分类标志
-            String flag = String.valueOf(chars);
+            String flag = new String(chars);
             List<String> list = map.getOrDefault(flag, new ArrayList<>());
             list.add(str);
             map.put(flag, list);
         }
-        List<List<String>> res = new ArrayList<>();
-        for (String flag : map.keySet()) {
-            res.add(map.get(flag));
-        }
-        return res;
+        return new ArrayList<>(map.values());
     }
 
     public static void main(String[] args) {
