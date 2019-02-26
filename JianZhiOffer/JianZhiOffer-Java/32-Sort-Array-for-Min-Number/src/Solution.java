@@ -8,12 +8,8 @@ public class Solution {
         // 根据新的排序规则进行排序
         return Arrays.stream(numbers)
                 .boxed()
-                .sorted((Integer num1, Integer num2) -> {
-                    String str1 = num1 + "" + num2;
-                    String str2 = num2 + "" + num1;
-                    return str1.compareTo(str2);
-                })
                 .map(String::valueOf)
+                .sorted((String str1, String str2) -> (str1 + str2).compareTo(str2 + str1))
                 .reduce((String str1, String str2) -> str1 + str2)
                 .get();
     }
