@@ -9,8 +9,8 @@ public class Solution {
         return Arrays.stream(numbers)
                 .boxed()
                 .map(String::valueOf)
-                .sorted((String str1, String str2) -> (str1 + str2).compareTo(str2 + str1))
-                .reduce((String str1, String str2) -> str1 + str2)
+                .sorted((str1, str2) -> (str1 + str2).compareTo(str2 + str1))
+                .reduce((str1, str2) -> str1 + str2)
                 .get();
     }
 
