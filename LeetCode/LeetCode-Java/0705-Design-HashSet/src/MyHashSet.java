@@ -6,7 +6,7 @@ class MyHashSet {
      * Initialize your data structure here.
      */
     public MyHashSet() {
-        bucket = new boolean[1000000];
+        bucket = new boolean[1000001];
     }
 
     public void add(int key) {
