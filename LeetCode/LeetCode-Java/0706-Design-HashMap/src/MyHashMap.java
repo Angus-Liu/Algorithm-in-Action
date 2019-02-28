@@ -1,38 +1,76 @@
-import java.util.Arrays;
-
 class MyHashMap {
 
-    int[] valueSet;
+    class Node {
+        int key, value;
+        Node next;
 
-    // 这里偷懒了，实际上不应该这么做
+        Node(int key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    private Node[] bucket;
+    private int capacity;
 
     /**
      * Initialize your data structure here.
      */
     public MyHashMap() {
-        valueSet = new int[1000001];
-        Arrays.fill(valueSet, -1);
+        capacity = 10001;
+        bucket = new Node[capacity];
     }
 
     /**
      * value will always be non-negative.
      */
     public void put(int key, int value) {
-        valueSet[key] = value;
+        int hash = key % capacity;
+        Node cur = bucket[hash];
+        while (cur != null) {
+            if (cur.key == key) {
+                cur.value = value;
+                return;
+            }
+            cur = cur.next;
+        }
+        Node newNode = new Node(key, value);
+        newNode.next = bucket[hash];
+        bucket[hash] = newNode;
     }
 
     /**
      * Returns the value to which the specified key is mapped, or -1 if this map contains no mapping for the key
      */
     public int get(int key) {
-        return valueSet[key];
+        int hash = key % capacity;
+        Node cur = bucket[hash];
+        while (cur != null) {
+            if (cur.key == key) {
+                return cur.value;
+            }
+            cur = cur.next;
+        }
+        return -1;
     }
 
     /**
      * Removes the mapping of the specified value key if this map contains a mapping for the key
      */
     public void remove(int key) {
-        valueSet[key] = -1;
+        int hash = key % capacity;
+        Node head = bucket[hash];
+        Node dummyHead = new Node(0, -1);
+        dummyHead.next = head;
+        Node cur = dummyHead;
+        while (cur.next != null) {
+            if (cur.next.key == key) {
+                cur.next = cur.next.next;
+                break;
+            }
+            cur = cur.next;
+        }
+        bucket[hash] = dummyHead.next;
     }
 }
 
