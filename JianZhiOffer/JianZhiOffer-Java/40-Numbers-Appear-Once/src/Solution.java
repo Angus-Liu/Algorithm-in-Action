@@ -52,5 +52,7 @@ public class Solution {
         int[] array = {2, 4, 3, 6, 3, 2, 5, 5};
         int[] num1 = new int[1], num2 = new int[1];
         new Solution().FindNumsAppearOnce(array, num1, num2);
+        System.out.println("num1 = " + num1[0]);
+        System.out.println("num2 = " + num2[0]);
     }
 }
