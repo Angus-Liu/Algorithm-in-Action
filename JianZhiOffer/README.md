@@ -6,7 +6,7 @@
 
 | 序号 | 题目（牛客网）                                               | 通过率 |                             解答                             | 状态 |        考点        |
 | :--: | ------------------------------------------------------------ | ------ | :----------------------------------------------------------: | :--: | :----------------: |
-|  1   | [二维数组中的查找](https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&tqId=11154&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) | 23.34% | [Java](./JianZhiOffer-Java/01-Finding-in-a-Two-Dimensional-Array/src) |  √   |        数组        |
+|  1   | [二维数组中的查找](https://www.nowcoder.com/practice/abc3fe2ce8e146608e868a70efebf62e?tpId=13&tqId=11154&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) | 23.34% | [Java](./JianZhiOffer-Java/01-Find-in-Partially-Sorted-Matrix/src) |  √   |        数组        |
 |  2   | [替换空格](https://www.nowcoder.com/practice/4060ac7e3e404ad1a894ef3e17650423?tpId=13&tqId=11155&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) | 23.99% |       [Java](./JianZhiOffer-Java/02-Replace-Blank/src)       |  √   |       字符串       |
 |  3   | [从尾到头打印链表](https://www.nowcoder.com/practice/d0267f7f55b3412ba93bd35cfa8e8035?tpId=13&tqId=11156&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) | 23.72% |  [Java](./JianZhiOffer-Java/03-Print-List-Reversingly/src)   |  √   |        链表        |
 |  4   | [重建二叉树](https://www.nowcoder.com/practice/8a19cbe657394eeaac2f6ea9b0f6fcf6?tpId=13&tqId=11157&tPage=1&rp=1&ru=/ta/coding-interviews&qru=/ta/coding-interviews/question-ranking) | 22.29% |   [Java](./JianZhiOffer-Java/04-Construct-Binary-Tree/src)   |  √   |         树         |
