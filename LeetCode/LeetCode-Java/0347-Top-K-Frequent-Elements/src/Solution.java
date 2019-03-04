@@ -71,13 +71,7 @@ class Solution {
             }
         }
         // 使用优先级队列实现
-        PriorityQueue<Integer> pq = new PriorityQueue<>(new Comparator<Integer>() {
-            @Override
-            public int compare(Integer a, Integer b) {
-                // 比较 a 和 b 出现的频次
-                return map.get(a) - map.get(b);
-            }
-        });
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Comparator.comparingInt(map::get));
         for (int key : map.keySet()) {
             // 优先级队列中值保留频次最大的前 k 个数值
             if (pq.size() < k) {
@@ -93,7 +87,6 @@ class Solution {
         while (!pq.isEmpty()) {
             res.add(pq.remove());
         }
-//         Collections.reverse(res);
         return res;
     }
 
