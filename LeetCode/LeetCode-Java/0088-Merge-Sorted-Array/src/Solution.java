@@ -25,7 +25,7 @@ class Solution {
         }
     }
 
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public void merge_2(int[] nums1, int m, int[] nums2, int n) {
         for (int i = m - 1; i >= 0; i--) {
             nums1[i + n] = nums1[i];
         }
@@ -44,11 +44,28 @@ class Solution {
         }
     }
 
+    /**
+     * 更好的解法，不需要先拷贝数组
+     */
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+        int index = m + n - 1, index1 = m - 1, index2 = n - 1;
+        while (index1 >= 0 && index2 >= 0) {
+            if (nums1[index1] > nums2[index2]) {
+                nums1[index--] = nums1[index1--];
+            } else {
+                nums1[index--] = nums2[index2--];
+            }
+        }
+        while (index2 >= 0) {
+            nums1[index--] = nums2[index2--];
+        }
+    }
+
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] nums1 = {1, 2, 3, 0, 0, 0};
-        int[] nums2 = {2, 5, 6};
-        solution.merge(nums1, 3, nums2, 3);
+        int[] nums1 = {0};
+        int[] nums2 = {1};
+        solution.merge(nums1, 0, nums2, 1);
         System.out.println(Arrays.toString(nums1));
     }
 }
