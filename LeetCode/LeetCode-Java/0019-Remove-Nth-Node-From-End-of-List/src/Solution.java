@@ -1,6 +1,8 @@
 class Solution {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
-        // 使用虚拟头结点以及滑动窗口（大小为 n + 2）来解决
+    /**
+     * 使用虚拟头结点以及滑动窗口（大小为 n + 2）来解决
+     */
+    public ListNode removeNthFromEnd_1(ListNode head, int n) {
         ListNode dummyHead = new ListNode(0);
         dummyHead.next = head;
         // 双指针
@@ -20,8 +22,25 @@ class Solution {
         return dummyHead.next;
     }
 
+    private int m;
+
+    public ListNode removeNthFromEnd(ListNode head, int n) {
+        m = n;
+        if (head == null) {
+            return null;
+        }
+        removeNthFromEnd(head.next, m);
+        if (m-- == 0) {
+            head.next = head.next.next;
+        }
+        if (m == 0) {
+            head = head.next;
+        }
+        return head;
+    }
+
     public static void main(String[] args) {
-        ListNode head = new ListNode(new int[]{1, 2, 3, 4, 5});
-        System.out.println(new Solution().removeNthFromEnd(head, 2));
+        ListNode head = new ListNode(new int[]{1});
+        System.out.println(new Solution().removeNthFromEnd(head, 1));
     }
 }
