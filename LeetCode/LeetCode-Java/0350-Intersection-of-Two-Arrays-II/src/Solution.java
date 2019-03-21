@@ -1,12 +1,9 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 class Solution {
     /**
      * 使用集合实现
-     *
-     * @param nums1
-     * @param nums2
-     * @return
      */
     public int[] intersect_1(int[] nums1, int[] nums2) {
         List<Integer> list1 = new ArrayList<>();
@@ -30,13 +27,33 @@ class Solution {
     }
 
     /**
-     * 使用映射实现
-     *
-     * @param nums1
-     * @param nums2
-     * @return
+     * 使用集合的实现
      */
     public int[] intersect_2(int[] nums1, int[] nums2) {
+        List<Integer> list1 = Arrays.stream(nums1)
+                .boxed()
+                .collect(Collectors.toList());
+        List<Integer> list2 = Arrays.stream(nums2)
+                .boxed()
+                .filter(num -> {
+                    if (list1.contains(num)) {
+                        list1.remove(num);
+                        return true;
+                    }
+                    return false;
+                })
+                .collect(Collectors.toList());
+        int[] res = new int[list2.size()];
+        for (int i = 0; i < list2.size(); i++) {
+            res[i] = list2.get(i);
+        }
+        return res;
+    }
+
+    /**
+     * 使用映射实现
+     */
+    public int[] intersect_3(int[] nums1, int[] nums2) {
         Map<Integer, Integer> map = new HashMap<>(nums1.length);
         // 现将 nums1 出现的数值及频次放入映射中
         for (int num : nums1) {
@@ -64,6 +81,9 @@ class Solution {
         return res;
     }
 
+    /**
+     * 排序预处理
+     */
     public int[] intersect(int[] nums1, int[] nums2) {
         Arrays.sort(nums1);
         Arrays.sort(nums2);
@@ -88,6 +108,6 @@ class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        System.out.println(Arrays.toString(solution.intersect(new int[]{4, 9, 4,5}, new int[]{9, 4, 9, 8, 4})));
+        System.out.println(Arrays.toString(solution.intersect(new int[]{4, 9, 4, 5}, new int[]{9, 4, 9, 8, 4})));
     }
 }
