@@ -11,8 +11,8 @@ class Solution {
             if (ceiling != null && ceiling <= ((long) nums[i] + (long) t)) {
                 return true;
             }
+            // 添加后，控制查找表（窗口）大小，移除窗口最左边元素
             set.add((long) nums[i]);
-            // 控制查找表（窗口）大小，移除窗口最左边元素
             if (set.size() == k + 1) {
                 set.remove((long) nums[i - k]);
             }
