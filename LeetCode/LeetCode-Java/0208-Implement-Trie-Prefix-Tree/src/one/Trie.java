@@ -1,3 +1,5 @@
+package one;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,8 +37,7 @@ class Trie {
      */
     public void insert(String word) {
         Node cur = root;
-        for (int i = 0; i < word.length(); i++) {
-            Character c = word.charAt(i);
+        for (char c : word.toCharArray()) {
             if (cur.next.get(c) == null) {
                 cur.next.put(c, new Node());
             }
@@ -50,8 +51,7 @@ class Trie {
      */
     public boolean search(String word) {
         Node cur = root;
-        for (int i = 0; i < word.length(); i++) {
-            Character c = word.charAt(i);
+        for (char c : word.toCharArray()) {
             if (cur.next.get(c) == null) {
                 return false;
             }
@@ -65,8 +65,7 @@ class Trie {
      */
     public boolean startsWith(String prefix) {
         Node cur = root;
-        for (int i = 0; i < prefix.length(); i++) {
-            Character c = prefix.charAt(i);
+        for (char c : prefix.toCharArray()) {
             if (cur.next.get(c) == null) {
                 return false;
             }
@@ -87,8 +86,8 @@ class Trie {
 }
 
 /**
- * Your Trie object will be instantiated and called as such:
- * Trie obj = new Trie();
+ * Your one.Trie object will be instantiated and called as such:
+ * one.Trie obj = new one.Trie();
  * obj.insert(word);
  * boolean param_2 = obj.search(word);
  * boolean param_3 = obj.startsWith(prefix);
