@@ -12,11 +12,7 @@ class Solution {
      */
     private class Node {
         boolean isRoot;
-        Map<Character, Node> next;
-
-        Node() {
-            next = new HashMap<>();
-        }
+        Map<Character, Node> next = new HashMap<>();
 
         void insert(String word) {
             Node cur = this;
@@ -33,10 +29,11 @@ class Solution {
             for (char c : word.toCharArray()) {
                 if (cur.isRoot) {
                     return root.toString();
-                } else if (cur.next.containsKey(c)) {
+                }
+                if (cur.next.containsKey(c)) {
                     root.append(c);
                 } else {
-                    break;
+                    return word;
                 }
                 cur = cur.next.get(c);
             }
