@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 class Solution {
     public TreeNode deleteNode(TreeNode root, int key) {
         // 参考《算法（第4版）》- 3.2 二叉查找树
@@ -43,5 +46,41 @@ class Solution {
         }
         node.left = deleteMin(node.left);
         return node;
+    }
+
+    private static void printTree(TreeNode node) {
+        StringBuilder res = new StringBuilder();
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(node);
+        while (!queue.isEmpty()) {
+            TreeNode cur = queue.remove();
+            if (cur != null) {
+                res.append(cur.val).append(",");
+                queue.add(cur.left);
+                queue.add(cur.right);
+            } else {
+                res.append("null,");
+            }
+        }
+        System.out.println(res.toString());
+    }
+
+    public static void main(String[] args) {
+        // 5,3,6,2,4,x,7
+        // 5,4,6,2,x,x,7
+        TreeNode root = new TreeNode(5);
+        TreeNode left = new TreeNode(3);
+        TreeNode right = new TreeNode(6);
+        root.left = left;
+        root.right = right;
+        left.left = new TreeNode(2);
+        left.right = new TreeNode(4);
+        right.right = new TreeNode(7);
+
+        printTree(root);
+
+        new Solution().deleteNode(root, 3);
+
+        printTree(root);
     }
 }
