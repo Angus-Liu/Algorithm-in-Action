@@ -26,7 +26,12 @@
 
 # Algorithm in Action
 
-> Some of my practices on Algorithms : ) 这个仓库保存着我在 [**LeetCode**](./LeetCode)、[**剑指Offer**](./JianZhiOffer) 上的一些解答，代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。后续还会整合其他题库，如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
+> Some of my practices on Algorithms : ) 这个仓库保存着我在算法平台上的一些解答，代码中保留了必要的注释。不一定是最优的解答，但力保代码简洁易懂。后续还会整合其他题库，如若发现什么错误，希望你能告诉我或帮助我解决。非常感谢！
+
+##  Catalog
+
+- [**LeetCode**](./LeetCode)
+- [**剑指Offer**](./JianZhiOffer) 
 
 <img src="assets/code.png" alt="Quick Sort" width="960" />
 
