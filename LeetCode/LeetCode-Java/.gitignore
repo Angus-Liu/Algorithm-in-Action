@@ -8,3 +8,4 @@ out
 ### VSCode ###
 .vscode
 .idea/
+*.class
