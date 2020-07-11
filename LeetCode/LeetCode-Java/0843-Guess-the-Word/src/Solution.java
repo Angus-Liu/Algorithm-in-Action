@@ -29,7 +29,7 @@ class Solution {
     }
 
     /**
-     * 删除与 badWord 高匹配度的单词, 与 badWord 的极大相似既是与 secret 的极大不相似
+     * 删除与 badWord 高匹配度的单词
      */
     private void delHighMatchFactorWithBadWord(String badWord, String[] wordList, int matchFactor, int startIndex) {
         for (int i = startIndex; i < wordList.length; i++) {
