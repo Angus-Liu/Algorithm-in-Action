@@ -1,6 +1,4 @@
 /**
- * TODO: angus on 2020/7/11 这样解答是错误的，但是通过了，我也不知道为什么，先放在这里，日后看错误原因
- *
  * @author angus on 2020/7/11
  * @since 1.0.0
  */
@@ -11,32 +9,33 @@ class Solution {
             // 获取当前单词与 secret 的相似度
             int matchFactor = master.guess(wordlist[i]);
             if (matchFactor == 6) return;
-            // 若该单词与 secret 相似度大于 0, 可从单词列表中删除掉与该单词相识度小于此值的单词
-            if (matchFactor > 0) delLowMatchFactorWord(wordlist[i], wordlist, matchFactor);
+            // 若该单词与 secret 相似度大于 0, 可从单词列表中删除掉与该单词相似度不等于此值的单词
+            if (matchFactor > 0) delWrongMatchWithWord(wordlist[i], wordlist, matchFactor, i + 1);
             // 若相似度为 0, 可从单词列表中删除掉与这个单词相似的单词
-            if (matchFactor == 0) delHighMatchFactorWithBadWord(wordlist[i], wordlist, matchFactor, i);
+            if (matchFactor == 0) delHighMatchWithBadWord(wordlist[i], wordlist, matchFactor, i + 1);
         }
     }
 
     /**
-     * 删除掉低匹配度单词
+     * 删除掉与 secret 匹配度不等于指定值的单词
      */
-    private void delLowMatchFactorWord(String word, String[] wordList, int matchFactor) {
-        for (int i = 0; i < wordList.length; i++) {
-            if (calMatchFactor(word, wordList[i]) < matchFactor)
+    private void delWrongMatchWithWord(String word, String[] wordList, int matchFactor, int startIndex) {
+        for (int i = startIndex; i < wordList.length; i++) {
+            if (wordList[i] == null) continue;
+            if (calMatchFactor(word, wordList[i]) != matchFactor)
                 wordList[i] = null;
         }
     }
 
     /**
-     * 删除与 badWord 高匹配度的单词
+     * 删除与 badWord 匹配度高于指定值的单词
      */
-    private void delHighMatchFactorWithBadWord(String badWord, String[] wordList, int matchFactor, int startIndex) {
+    private void delHighMatchWithBadWord(String badWord, String[] wordList, int matchFactor, int startIndex) {
         for (int i = startIndex; i < wordList.length; i++) {
             if (wordList[i] == null) continue;
             // 与 badWord 的极大相似既是与 secret 的极大不相似
             if (calMatchFactor(badWord, wordList[i]) > matchFactor) {
-                delHighMatchFactorWithBadWord(wordList[i], wordList, matchFactor + 1, startIndex + 1);
+                delHighMatchWithBadWord(wordList[i], wordList, matchFactor + 1, startIndex + 1);
                 wordList[i] = null;
             }
         }
@@ -47,10 +46,8 @@ class Solution {
      */
     private int calMatchFactor(String w1, String w2) {
         int matchFactor = 0;
-        if (w1 != null && w2 != null) {
-            for (int i = 0; i < 6; i++) {
-                if (w1.charAt(i) == w2.charAt(i)) matchFactor++;
-            }
+        for (int i = 0; i < 6; i++) {
+            if (w1.charAt(i) == w2.charAt(i)) matchFactor++;
         }
         return matchFactor;
     }
