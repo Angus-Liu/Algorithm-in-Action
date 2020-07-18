@@ -34,8 +34,9 @@ class Solution {
         for (int i = startIndex; i < wordList.length; i++) {
             if (wordList[i] == null) continue;
             // 与 badWord 的极大相似既是与 secret 的极大不相似
-            if (calMatchFactor(badWord, wordList[i]) > matchFactor) {
-                delHighMatchWithBadWord(wordList[i], wordList, matchFactor + 1, startIndex + 1);
+            int nextMatchFactor = calMatchFactor(badWord, wordList[i]);
+            if (nextMatchFactor > matchFactor) {
+                delHighMatchWithBadWord(wordList[i], wordList, nextMatchFactor, startIndex + 1);
                 wordList[i] = null;
             }
         }
