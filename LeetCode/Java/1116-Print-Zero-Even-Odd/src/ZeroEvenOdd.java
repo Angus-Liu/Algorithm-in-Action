@@ -17,17 +17,16 @@ class ZeroEvenOdd {
     public void zero(IntConsumer printNumber) throws InterruptedException {
         while (true) {
             z.acquire();
-            if (i > n) {
-                e.release();
-                o.release();
-                return;
-            }
+            if (i > n) break;
             printNumber.accept(0);
             if (i % 2 == 0)
                 e.release();
             else
                 o.release();
         }
+        z.release();
+        e.release();
+        o.release();
     }
 
     public void even(IntConsumer printNumber) throws InterruptedException {
