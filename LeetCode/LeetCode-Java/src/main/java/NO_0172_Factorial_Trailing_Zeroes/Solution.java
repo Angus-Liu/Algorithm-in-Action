@@ -1,8 +1,8 @@
 package NO_0172_Factorial_Trailing_Zeroes;
 
 class Solution {
-    // 只有 2 * 5 才会使末尾为 0，而阶乘中 2 的个数远远大于 5 的个数，比如 20 = 2 * 2 * 5
-    // 所以只需要计算 5 的个数即可
+    // 只有 2 * 5 才会使末尾为 0，而阶乘中 2 的个数远远大于 5 的个数，
+    // 比如 20 = 5 + 5 + 5 + 5，所以只需要计算 5 的个数即可
     public int trailingZeroes(int n) {
         if(n < 5) return 0;
         int t = n / 5;
