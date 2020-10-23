@@ -12,8 +12,8 @@ class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String[] strs = {"A", "B", "C", "Z", "AA", "AB", "ZY"};
-        for (String s : strs) {
+        String[] strArr = {"A", "B", "C", "Z", "AA", "AB", "ZY"};
+        for (String s : strArr) {
             System.out.println(solution.titleToNumber(s));
         }
     }
