@@ -17,9 +17,10 @@ public class Solution {
     }
 
     public boolean isPowerOfFour2(int num) {
-        if (num <= 0) return false;
-        if (num == 1) return true;
-        return num % 4 == 0 && isPowerOfFour(num / 4);
+//        if (num <= 0) return false;
+//        if (num == 1) return true;
+//        return num % 4 == 0 && isPowerOfFour(num / 4);
+        return (num > 0) && ((num == 1) || (num % 4 == 0 && isPowerOfFour(num / 4)));
     }
 
     public static void main(String[] args) {
