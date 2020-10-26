@@ -4,16 +4,15 @@ package NO_LCP_22;
  * 黑白方格画
  * https://leetcode-cn.com/problems/ccw6C7/
  */
-public class Solution {
-    
-    // TODO: angus on 2020/10/26
-    // 还需阅读 https://leetcode-cn.com/problems/ccw6C7/solution/shu-xue-tui-dao-by-sunrise-z/
+class Solution {
     public int paintingPlan(int n, int k) {
         if (k == 0 || k == n * n) return 1;
         int res = 0;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
+                // 如果 i 行 j 列均涂黑后，减去相交部分等于 k，则符合条件
                 if (n * (i + j) - (i * j) == k) {
+                    // 从 n 行中任意取 i 行 * 从 n 列中任意取 j 列
                     res += combination(n, i) * combination(n, j);
                 }
             }
@@ -37,6 +36,5 @@ public class Solution {
         System.out.println(s.paintingPlan(2, 2));
         System.out.println(s.paintingPlan(2, 4));
         System.out.println(s.paintingPlan(4, 4));
-        System.out.println(s.paintingPlan(1, 1));
     }
 }
