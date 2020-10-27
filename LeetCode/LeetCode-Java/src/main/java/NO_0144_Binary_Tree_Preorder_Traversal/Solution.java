@@ -10,9 +10,6 @@ class Solution {
 
     /**
      * 递归算法，若非递归需借助栈实现
-     *
-     * @param root
-     * @return
      */
     public List<Integer> preorderTraversal(TreeNode root) {
         if (root != null) {
@@ -25,9 +22,6 @@ class Solution {
 
     /**
      * 迭代实现（借助栈）
-     *
-     * @param root
-     * @return
      */
     public List<Integer> preorderTraversal2(TreeNode root) {
         Stack<TreeNode> stack = new Stack<>();
