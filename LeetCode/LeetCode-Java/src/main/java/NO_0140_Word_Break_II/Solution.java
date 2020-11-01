@@ -5,9 +5,12 @@ import java.util.*;
 /**
  * 单词拆分 II
  * https://leetcode-cn.com/problems/word-break-ii/
- * 如果你会做 139. 单词拆分，那么这道题就可以直接照搬思路（😯效率不高，下次再优化吧）
  */
 class Solution {
+    
+    /**
+     * 如果你会做 139. 单词拆分，那么这道题就可以直接照搬思路（😯效率不高，下次再优化吧）
+     */
     public List<String> wordBreak(String s, List<String> wordDict) {
         int n = s.length();
         // key - 当前字母的在 s 中的索引
