@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class Solution {
     /**
-     * 哈希表，不满住 O(1) 空间复杂度
+     * 哈希表，不满足 O(1) 空间复杂度
      */
     public ListNode getIntersectionNode_1(ListNode headA, ListNode headB) {
         Set<ListNode> set = new HashSet<>();
