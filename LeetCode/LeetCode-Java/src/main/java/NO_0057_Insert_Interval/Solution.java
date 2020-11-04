@@ -2,7 +2,6 @@ package NO_0057_Insert_Interval;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -12,8 +11,8 @@ import java.util.List;
 class Solution {
 
     /**
-     * 将 newInterval 与 intervals 逐一比较，如果有交集，就合成新的 newInterval，
-     * 没有交集直接方到结果集中，最后把 newInterval 也加入，排序后输出
+     * 将 newInterval 与 intervals 逐一比较，如果有交集，合成新的 newInterval，
+     * 没有交集直接放到结果集中，最后把 newInterval 也加入，排序后输出
      */
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> res = new ArrayList<>();
@@ -25,9 +24,8 @@ class Solution {
             }
         }
         res.add(newInterval);
-        res.sort(Comparator.comparingInt(i -> i[0]));
-        int[][] newIntervals = new int[res.size()][2];
-        return res.toArray(newIntervals);
+        res.sort((i1, i2) -> i1[0] - i2[0]);
+        return res.toArray(new int[res.size()][2]);
     }
 
     /**
