@@ -26,7 +26,6 @@ class RandomizedCollection {
         return vIdxSet.size() == 1;
     }
 
-    // TODO: angus on 2020/10/31 待优化
     /** Removes a value from the collection. Returns true if the collection contained the specified element. */
     public boolean remove(int val) {
         Set<Integer> vIdxSet = vIdxMap.get(val);
