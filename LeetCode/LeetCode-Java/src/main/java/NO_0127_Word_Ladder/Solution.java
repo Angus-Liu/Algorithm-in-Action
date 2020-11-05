@@ -3,6 +3,7 @@ package NO_0127_Word_Ladder;
 import java.util.*;
 
 class Solution {
+    // TODO: angus on 2020/11/5 待优化，还需要搞清楚是怎么回事
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
         // 图论方式求解，以图来建模
         int end = wordList.indexOf(endWord);
