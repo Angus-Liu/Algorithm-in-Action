@@ -1,7 +1,7 @@
 package NO_0122_Best_Time_to_Buy_and_Sell_Stock_II;
 
 class Solution {
-    public int maxProfit_1(int[] prices) {
+    public int maxProfit1(int[] prices) {
         // 贪心算法
         int cost = -1;
         int profit = 0;
@@ -32,8 +32,6 @@ class Solution {
         }
         return profit;
     }
-
-
 
     public static void main(String[] args) {
         System.out.println(new Solution().maxProfit(new int[]{1, 2, 3, 4, 5})); // 4
