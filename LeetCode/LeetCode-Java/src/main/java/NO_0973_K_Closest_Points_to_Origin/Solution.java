@@ -3,6 +3,7 @@ package NO_0973_K_Closest_Points_to_Origin;
 import java.util.*;
 
 class Solution {
+    // TODO: angus on 2020/11/9 待优化
     public int[][] kClosest(int[][] points, int K) {
         Map<Integer, List<int[]>> map = new HashMap<>();
         List<Integer> disList = new ArrayList<>();
