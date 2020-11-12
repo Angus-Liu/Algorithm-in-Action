@@ -6,6 +6,6 @@ package NO_0514_Freedom_Trail;
  */
 class Solution {
     public int findRotateSteps(String ring, String key) {
-
+        throw new RuntimeException("TODO");
     }
 }
