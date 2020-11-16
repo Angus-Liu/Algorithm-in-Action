@@ -13,9 +13,9 @@ class Solution {
         Arrays.sort(people, (a, b) -> a[0] == b[0] ? b[1] - a[1] : a[0] - b[0]);
         for (int[] p : people) {
             // 先确定较矮的所在位置，因为剩下的位置就是留给更高的
-            for (int i = 0, j = p[1] + 1; i < res.length; i++) {
+            for (int i = 0, j = p[1]; i < res.length; i++) {
                 if (res[i] != null) continue;
-                if (--j != 0) continue;
+                if (j-- != 0) continue;
                 res[i] = p;
                 break;
             }
