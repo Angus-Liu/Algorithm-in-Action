@@ -6,15 +6,17 @@ package NO_0134_Gas_Station;
  */
 class Solution {
     public int canCompleteCircuit(int[] gas, int[] cost) {
+        // 走完全程剩余汽油
         int restGas = 0;
-        int costGas = 0;
+        // 当前油箱汽油
+        int curGas = 0;
         int start = 0;
         for (int i = 0; i < gas.length; i++) {
             restGas += gas[i] - cost[i];
-            costGas += gas[i] - cost[i];
-            if (costGas < 0) {
+            curGas += gas[i] - cost[i];
+            if (curGas < 0) {
                 start = i + 1;
-                costGas = 0;
+                curGas = 0;
             }
         }
         return restGas >= 0? start : -1;
