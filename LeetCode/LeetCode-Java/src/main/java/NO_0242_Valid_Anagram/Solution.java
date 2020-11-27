@@ -4,16 +4,20 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 有效的字母异位词
+ * https://leetcode-cn.com/problems/valid-anagram/
+ */
 class Solution {
-    public boolean isAnagram_1(String s, String t) {
+    public boolean isAnagram1(String s, String t) {
         char[] sChars = s.toCharArray();
         char[] tChars = t.toCharArray();
         Arrays.sort(sChars);
         Arrays.sort(tChars);
-        return String.valueOf(sChars).equals(String.valueOf(tChars));
+        return Arrays.equals(sChars, tChars);
     }
 
-    public boolean isAnagram_2(String s, String t) {
+    public boolean isAnagram2(String s, String t) {
         Map<Character, Integer> map = new HashMap<>();
         for (char ch : s.toCharArray()) {
             map.put(ch, map.getOrDefault(ch, 0) + 1);
@@ -31,7 +35,7 @@ class Solution {
         return map.isEmpty();
     }
 
-    public boolean isAnagram(String s, String t) {
+    public boolean isAnagram3(String s, String t) {
         int[] sCounts = new int[26];
         int[] tCounts = new int[26];
         for (char ch : s.toCharArray()) {
@@ -48,6 +52,16 @@ class Solution {
         return true;
     }
 
+    public boolean isAnagram4(String s, String t) {
+        int[] counts = new int[26];
+        t.chars().forEach(tc -> counts[tc - 'a']++);
+        s.chars().forEach(cs -> counts[cs - 'a']--);
+        return Arrays.stream(counts).allMatch(c -> c == 0);
+    }
+
+    public boolean isAnagram(String s, String t) {
+        return Arrays.equals(s.chars().sorted().toArray(), t.chars().sorted().toArray());
+    }
 
     public static void main(String[] args) {
         Solution solution = new Solution();
