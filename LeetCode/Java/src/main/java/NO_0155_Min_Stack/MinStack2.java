@@ -1,7 +1,5 @@
 package NO_0155_Min_Stack;
 
-import javafx.util.Pair;
-
 import java.util.Stack;
 
 class MinStack2 {
