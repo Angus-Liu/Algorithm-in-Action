@@ -1,8 +1,5 @@
 package NO_0102_Binary_Tree_Level_Order_Traversal;
 
-
-import javafx.util.Pair;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
