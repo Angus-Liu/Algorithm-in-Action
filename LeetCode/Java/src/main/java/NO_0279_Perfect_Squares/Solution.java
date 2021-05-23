@@ -1,7 +1,5 @@
 package NO_0279_Perfect_Squares;
 
-import javafx.util.Pair;
-
 import java.util.LinkedList;
 import java.util.Queue;
 
