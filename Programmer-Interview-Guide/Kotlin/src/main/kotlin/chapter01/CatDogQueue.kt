@@ -25,56 +25,55 @@ class Dog : Pet("dog")
 class Cat : Pet("cat")
 
 class CatDogQueue {
-    private val catIndexQueue = LinkedList<Int>()
-    private val dogIndexQueue = LinkedList<Int>()
-    private val indexPetMap = HashMap<Int, Pet>()
-
-    private var index = 0
+    private val catIdxQueue = LinkedList<Int>()
+    private val dogIdxQueue = LinkedList<Int>()
+    private val idxPetMap = HashMap<Int, Pet>()
+    private var idx = 0
 
     fun add(p: Pet) {
-        if(isEmpty()) index = 0
+        if(isEmpty()) idx = 0
         when (p) {
-            is Cat -> catIndexQueue.add(index)
-            is Dog -> dogIndexQueue.add(index)
+            is Cat -> catIdxQueue.add(idx)
+            is Dog -> dogIdxQueue.add(idx)
         }
-        indexPetMap[index] = p
-        index++
+        idxPetMap[idx] = p
+        idx++
     }
 
     fun pollAll(): Pet? {
-        val catIndex = catIndexQueue.peek()
-        val dogIndex = dogIndexQueue.peek()
-        if (dogIndex != null && (catIndex == null || catIndex > dogIndex)) {
-            dogIndexQueue.pop()
-            return indexPetMap[dogIndex]
+        val catIdx = catIdxQueue.peek()
+        val dogIdx = dogIdxQueue.peek()
+        if (dogIdx != null && (catIdx == null || catIdx > dogIdx)) {
+            dogIdxQueue.pop()
+            return idxPetMap[dogIdx]
         }
-        if (catIndex != null && (dogIndex == null || dogIndex > catIndex)) {
-            catIndexQueue.pop()
-            return indexPetMap[catIndex]
+        if (catIdx != null && (dogIdx == null || dogIdx > catIdx)) {
+            catIdxQueue.pop()
+            return idxPetMap[catIdx]
         }
         throw NoSuchElementException()
     }
 
     fun pollDog(): Dog {
-        val dogIndex = dogIndexQueue.pop()
-        return indexPetMap[dogIndex] as Dog
+        val dogIdx = dogIdxQueue.pop()
+        return idxPetMap[dogIdx] as Dog
     }
 
     fun pollCat(): Cat {
-        val catIndex = catIndexQueue.pop()
-        return indexPetMap[catIndex] as Cat
+        val catIdx = catIdxQueue.pop()
+        return idxPetMap[catIdx] as Cat
     }
 
     fun isEmpty(): Boolean {
-        return catIndexQueue.isEmpty() && dogIndexQueue.isEmpty()
+        return catIdxQueue.isEmpty() && dogIdxQueue.isEmpty()
     }
 
     fun isDogEmpty(): Boolean {
-        return dogIndexQueue.isEmpty()
+        return dogIdxQueue.isEmpty()
     }
 
     fun isCatEmpty(): Boolean {
-        return catIndexQueue.isEmpty()
+        return catIdxQueue.isEmpty()
     }
 }
 
