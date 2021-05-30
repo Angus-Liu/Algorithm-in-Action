@@ -14,9 +14,9 @@ class TwoStackQueue {
         pushStack.add(num)
     }
 
-    fun pop(): Int {
+    fun poll(): Int {
         pushToPop()
-        return popStack.pop()
+        return popStack.poll()
     }
 
     fun peek(): Int {
@@ -43,13 +43,13 @@ fun main() {
     stack.add(2)
     stack.add(2)
     // ------
-    stack.pop()
+    stack.poll()
     // ------
     stack.add(6)
     stack.add(1)
     stack.add(5)
 
     while (!stack.isEmpty()) {
-        println("${stack.peek()} - ${stack.pop()}")
+        println("${stack.peek()} - ${stack.poll()}")
     }
 }
