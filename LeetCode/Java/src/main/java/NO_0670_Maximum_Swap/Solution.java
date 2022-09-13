@@ -19,10 +19,10 @@ class Solution {
             }
             if (maxIdx != i) {
                 swap(nums, i, maxIdx);
-                break;
+                return Integer.parseInt(String.valueOf(nums));
             }
         }
-        return Integer.parseInt(String.valueOf(nums));
+        return num;
     }
 
     private void swap(char[] arr, int i, int j) {
