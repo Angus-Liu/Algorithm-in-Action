@@ -1,4 +1,4 @@
-package NO_0155_Min_Stack;
+package NO_0155_Min_Stack.S1;
 
 public class Pair<K, V> {
     private K key;

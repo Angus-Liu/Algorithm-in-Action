@@ -1,12 +1,12 @@
-package NO_0155_Min_Stack;
+package NO_0155_Min_Stack.S2;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class MinStack {
 
-    private List<Integer> stack;
-    private List<Integer> minList;
+    private final List<Integer> stack;
+    private final List<Integer> minList;
     private int size;
 
     /**

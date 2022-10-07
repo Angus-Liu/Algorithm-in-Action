@@ -1,15 +1,15 @@
-package NO_0155_Min_Stack;
+package NO_0155_Min_Stack.S1;
 
 import java.util.Stack;
 
-class MinStack2 {
+class MinStack {
 
     Stack<Pair<Integer, Integer>> stack;
 
     /**
      * initialize your data structure here.
      */
-    public MinStack2() {
+    public MinStack() {
         stack = new Stack<>();
     }
 
