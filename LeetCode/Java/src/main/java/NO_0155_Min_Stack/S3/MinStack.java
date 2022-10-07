@@ -1,19 +1,16 @@
 package NO_0155_Min_Stack.S3;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.List;
 
-class MinStack3 {
+class MinStack {
 
     private final LinkedList<Integer> stack;
     private final LinkedList<Integer> minStack;
 
-
     /**
      * initialize your data structure here.
      */
-    public MinStack3() {
+    public MinStack() {
         stack = new LinkedList<>();
         minStack = new LinkedList<>();
     }
