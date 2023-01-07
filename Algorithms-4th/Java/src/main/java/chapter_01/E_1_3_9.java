@@ -10,7 +10,7 @@ import edu.princeton.cs.algs4.StdOut;
  * 例如，给定输入：1+2)*3-4)*5-6)))
  * 你的程序应该输出：((1+2)*((3-4)*(5-6)))
  */
-public class Exercises_1_3_9 {
+public class E_1_3_9 {
     public static void main(String[] args) {
         // 1+2)*3-4)*5-6)))
         // ((1+2)*((3-4)*(5-6)))

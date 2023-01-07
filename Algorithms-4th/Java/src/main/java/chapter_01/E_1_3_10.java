@@ -7,7 +7,7 @@ import edu.princeton.cs.algs4.StdOut;
 /**
  * Exercises 1.3.10
  */
-public class Exercises_1_3_10 {
+public class E_1_3_10 {
     /**
      * // TODO: angus on 2021/6/13 待优化
      */
