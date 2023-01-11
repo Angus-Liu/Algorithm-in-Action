@@ -1,50 +1,43 @@
 package chapter_01;
 
-import edu.princeton.cs.algs4.Point2D;
-import edu.princeton.cs.algs4.StdDraw;
-import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.*;
 
 public class E_1_2_1 {
     public static void main(String[] args) {
-        int n = Integer.parseInt(args[0]); // 10
-
-        Point2D[] points = new Point2D[n];
-        drawAndCreatePoints(points);
-
-        StdOut.printf("The shortest distance is: %.3f", calculateShortestDistance(points));
+        int N = 100; // default
+        if (args.length != 0) N = Integer.parseInt(args[0]);
+        Point2D[] points = getPoints(N);
+        showPoints(points);
+        double shortestDist = calcShortestDist(points);
+        StdOut.printf("The shortest distance is: %.3f", shortestDist);
     }
 
-    private static void drawAndCreatePoints(Point2D[] points) {
-        StdDraw.setCanvasSize(1024, 512);
-        StdDraw.setPenRadius(.015);
+    private static Point2D[] getPoints(int N) {
+        Point2D[] points = new Point2D[N];
+        for (int i = 0; i < N; i++) {
+            double x = StdRandom.uniform();
+            double y = StdRandom.uniform();
+            points[i] = new Point2D(x, y);
+        }
+        return points;
+    }
+
+    private static void showPoints(Point2D[] points) {
+        StdDraw.setPenRadius(0.01);
         StdDraw.setXscale(0, 1);
         StdDraw.setYscale(0, 1);
-
-        for (int i = 0; i < points.length; i++) {
-            double pointX = StdRandom.uniform();
-            double pointY = StdRandom.uniform();
-
-            Point2D point = new Point2D(pointX, pointY);
-            StdDraw.point(point.x(), point.y()); //The exercise doesn't require drawing, but it adds a nice touch
-
-            points[i] = point;
+        for (Point2D point : points) {
+            StdDraw.point(point.x(), point.y());
         }
     }
 
-    private static double calculateShortestDistance(Point2D[] points) {
-        double shortestDistance = Double.MAX_VALUE;
-        double currentDistance;
-
+    private static double calcShortestDist(Point2D[] points) {
+        double shortestDist = Double.POSITIVE_INFINITY;
         for (int i = 0; i < points.length - 1; i++) {
             for (int j = i + 1; j < points.length; j++) {
-                currentDistance = points[i].distanceTo(points[j]);
-
-                if (currentDistance < shortestDistance) {
-                    shortestDistance = currentDistance;
-                }
+                shortestDist = Math.min(shortestDist, points[i].distanceTo(points[j]));
             }
         }
-        return shortestDistance;
+        return shortestDist;
     }
 }
