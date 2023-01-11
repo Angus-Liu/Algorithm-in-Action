@@ -5,7 +5,7 @@ import java.util.Objects;
 /**
  * 有理数
  */
-public class E_1_2_16_Rational {
+public class E_1_2_16 {
     public static void main(String[] args) {
         Rational a = new Rational(15, 30);
         Rational b = new Rational(40, 60);
