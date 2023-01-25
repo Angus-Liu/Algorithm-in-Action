@@ -1,4 +1,4 @@
-package chapter_01;
+package chapter_01.section_01;
 
 public class E_1_1_33 {
     public static class Matrix {

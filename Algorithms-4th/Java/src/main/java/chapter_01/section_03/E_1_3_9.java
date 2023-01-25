@@ -1,4 +1,4 @@
-package chapter_01;
+package chapter_01.section_03;
 
 import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.StdIn;

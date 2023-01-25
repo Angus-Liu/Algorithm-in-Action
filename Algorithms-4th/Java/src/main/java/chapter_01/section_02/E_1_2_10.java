@@ -1,4 +1,4 @@
-package chapter_01;
+package chapter_01.section_02;
 
 import edu.princeton.cs.algs4.StdDraw;
 
