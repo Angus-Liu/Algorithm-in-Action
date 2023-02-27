@@ -1,4 +1,4 @@
-package NO_0028_Implement_strStr;
+package NO_0028_Find_the_Index_of_the_First_Occurrence_in_a_String;
 
 class Solution {
     public int strStr(String haystack, String needle) {
