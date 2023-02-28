@@ -6,21 +6,17 @@ import java.util.List;
 class Solution {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> res = new ArrayList<>();
-        if (numRows == 0) {
-            return res;
-        }
-        List<Integer> firstRow = new ArrayList<>(1);
-        firstRow.add(1);
-        res.add(firstRow);
+        if (numRows == 0) return res;
+        res.add(List.of(1));
         for (int i = 0; i < numRows - 1; i++) {
-            List<Integer> lastRow = res.get(i);
-            List<Integer> nextRow = new ArrayList<>();
-            nextRow.add(lastRow.get(0));
+            List<Integer> pre = res.get(i);
+            List<Integer> cur = new ArrayList<>();
+            cur.add(pre.get(0));
             for (int j = 1; j <= i; j++) {
-                nextRow.add(lastRow.get(j - 1) + lastRow.get(j));
+                cur.add(pre.get(j - 1) + pre.get(j));
             }
-            nextRow.add(lastRow.get(lastRow.size() - 1));
-            res.add(nextRow);
+            cur.add(pre.get(i));
+            res.add(cur);
         }
         return res;
     }
