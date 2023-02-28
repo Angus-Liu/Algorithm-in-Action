@@ -19,6 +19,8 @@ class Solution {
                 if (r + 1 < nums.length) {
                     r++;
                     sum += nums[r];
+                } else {
+                    break;
                 }
             } else {
                 // sum >= s, 窗口向右滑动
@@ -26,7 +28,7 @@ class Solution {
                 l++;
             }
             if (sum >= s) {
-                len = (r - l + 1) < len ? r - l + 1 : len;
+                len = Math.min((r - l + 1), len);
             }
         }
         if (len == nums.length + 1) {

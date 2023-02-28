@@ -1,6 +1,9 @@
 package NO_0485_Max_Consecutive_Ones;
 
 class Solution {
+    /**
+     * 双指针
+     */
     public int findMaxConsecutiveOnes_1(int[] nums) {
         int res = 0;
         int i = 0, j = 0;
@@ -15,6 +18,9 @@ class Solution {
         return res;
     }
 
+    /**
+     * 计数器
+     */
     public int findMaxConsecutiveOnes(int[] nums) {
         int res = 0;
         int count = 0;
