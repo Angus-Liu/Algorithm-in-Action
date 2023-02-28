@@ -2,21 +2,25 @@ package NO_0153_Find_Minimum_in_Rotated_Sorted_Array;
 
 class Solution {
     public int findMin(int[] nums) {
-        if (nums == null || nums.length == 0) {
-            return -1;
-        }
-        int l = 0, r = nums.length - 1;
-        while (l <= r) {
-            int m = l + (r - l) / 2;
-            if (nums[m] >= nums[l] && nums[m] <= nums[r]) {
-                return nums[l];
-            } else if (nums[m] < nums[l]) {
-                // 注意，不能直接赋值为 m + 1，因原 m 可能为最终答案
-                r = m;
+        int n = nums.length;
+        int l = 0, r = n - 1;
+        while (l < r) {
+            int m = (l + r) / 2;
+            if (nums[l] < nums[r]) break; // 剪枝
+            if (nums[m] < nums[r]) {
+                r = m; // 注意，不能直接赋值为 m + 1，因原 m 可能为最终答案
             } else {
                 l = m + 1;
             }
+            // System.out.printf("l = %d, r = %d, m = %d\n", l, r, m);
         }
-        return -1;
+        return nums[l];
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        int[] nums = {15, 16, 17, 11, 12, 13};
+        int min = solution.findMin(nums);
+        System.out.println("min = " + min);
     }
 }
