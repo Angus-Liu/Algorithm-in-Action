@@ -13,6 +13,8 @@ class Solution {
             for (int l = i + 1, r = nums.length - 1; l < r; ) {
                 int sum = nums[i] + nums[l] + nums[r];
                 if (sum == target) return sum;
+                // 注意，这里 diff 是 target - sum。其决定了后续指针怎么移动。
+                // 如果使用 sum - target，则指针移动方向要修改
                 int diff = target - sum;
                 if (Math.abs(diff) < minDiff) {
                     minDiff = Math.abs(diff);
