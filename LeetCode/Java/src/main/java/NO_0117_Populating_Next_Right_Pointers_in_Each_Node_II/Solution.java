@@ -29,15 +29,13 @@ class Solution {
     }
 
     public Node connect(Node root) {
-        if (root == null) {
-            return null;
-        }
+        if (root == null) return null;
         if (root.left != null) {
             if (root.right != null) {
                 // 若右子树不为空，则左子树的 next 即为右子树
                 root.left.next = root.right;
             } else {
-                // 若右子树为空，则右子树的 next 由根节点的 next 得出
+                // 若右子树为空，则左子树的 next 由根节点的 next 得出
                 root.left.next = next(root.next);
             }
         }
