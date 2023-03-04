@@ -3,7 +3,7 @@ package NO_0117_Populating_Next_Right_Pointers_in_Each_Node_II;
 import java.util.LinkedList;
 
 class Solution {
-    public Node connect_1(Node root) {
+    public Node connect1(Node root) {
         if (root == null) {
             return null;
         }
@@ -38,12 +38,12 @@ class Solution {
                 root.left.next = root.right;
             } else {
                 // 若右子树为空，则右子树的 next 由根节点的 next 得出
-                root.left.next = nextNode(root.next);
+                root.left.next = next(root.next);
             }
         }
         if (root.right != null) {
             // 右子树的 next 由根节点的 next 得出
-            root.right.next = nextNode(root.next);
+            root.right.next = next(root.next);
         }
         // 先确保 root.right 下的节点的已完全连接，因 root.left 下的节点的连接
         // 需要 root.left.next 下的节点的信息，若 root.right 下的节点未完全连
@@ -62,7 +62,7 @@ class Solution {
         return root;
     }
 
-    private Node nextNode(Node node) {
+    private Node next(Node node) {
         while (node != null) {
             if (node.left != null) {
                 return node.left;

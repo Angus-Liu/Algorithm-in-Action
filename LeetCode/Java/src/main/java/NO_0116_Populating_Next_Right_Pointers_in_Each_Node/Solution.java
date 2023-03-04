@@ -4,10 +4,8 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 class Solution {
-    public Node connect_1(Node root) {
-        if (root == null) {
-            return null;
-        }
+    public Node connect1(Node root) {
+        if (root == null) return null;
         // 借助队列实现层次遍历
         Queue<Node> queue = new LinkedList<>();
         queue.add(root);
@@ -27,7 +25,7 @@ class Solution {
         return root;
     }
 
-    public Node connect_2(Node root) {
+    public Node connect2(Node root) {
         if (root == null) {
             return null;
         }
