@@ -1,29 +1,27 @@
 package NO_0061_Rotate_List;
 
 
-
 class Solution {
+
+    /**
+     * 利用虚拟头结点和滑动窗口解决问题
+     */
     public ListNode rotateRight(ListNode head, int k) {
-        if (head == null || head.next == null) {
-            return head;
-        }
-        // 利用虚拟头结点和滑动窗口解决问题
-        ListNode dummyHead = new ListNode(0);
-        dummyHead.next = head;
-        ListNode p = dummyHead;
-        ListNode q = dummyHead;
+        if (head == null || head.next == null) return head;
 
         // 计算链表的长度
-        ListNode r = dummyHead;
+        ListNode r = head;
         int l = 0;
-        while (r.next != null) {
-            r = r.next;
+        while (r != null) {
             l++;
+            r = r.next;
         }
+
+        ListNode dummyHead = new ListNode(0);
+        dummyHead.next = head;
+        ListNode p = dummyHead, q = dummyHead;
         // k 根据长度取余，旋转效果一样
         k = k % l;
-//        System.out.println("l:" + l);
-//        System.out.println("k:" + k);
         if (k != 0) {
             for (int i = 0; i < k; i++) {
                 q = q.next;
