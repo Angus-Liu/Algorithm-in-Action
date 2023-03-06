@@ -6,14 +6,14 @@ import java.util.Map;
 
 class Solution {
     /**
-     * 统计每列缝隙出现的次数。找出缝隙最多的那一列，相应的改列砖块就最少。
+     * 统计每列缝隙出现的次数。找出缝隙最多的那一列，相应的该列砖块就最少。
      */
     public int leastBricks(List<List<Integer>> wall) {
         // key - 列号，value - 该列中缝隙出现的次数
         Map<Integer, Integer> gapCnt = new HashMap<>();
-        wall.forEach(row -> {
-            for (int i = 0, col = 0; i < row.size() - 1; i++) {
-                col += row.get(i);
+        wall.forEach(bricks -> {
+            for (int i = 0, col = 0; i < bricks.size() - 1; i++) {
+                col += bricks.get(i);
                 gapCnt.merge(col, 1, Integer::sum);
             }
         });
