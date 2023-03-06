@@ -1,38 +1,31 @@
 package NO_0199_Binary_Tree_Right_Side_View;
 
-
-
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
 class Solution {
+    /**
+     * 利用二叉树的层序遍历，取每层最右边的节点组成右试图
+     */
     public List<Integer> rightSideView(TreeNode root) {
-        // 利用二叉树的层序遍历，返回每层的最后一个即可
-        List<Integer> list = new LinkedList<>();
-        if (root == null) {
-            return list;
-        }
-        // 创建一个队列，用于存放所有节点
-        Queue<TreeNode> currentLevel = new LinkedList<>();
-        currentLevel.add(root);
-        while (!currentLevel.isEmpty()) {
-            int size = currentLevel.size();
+        List<Integer> res = new ArrayList<>();
+        if (root == null) return res;
+        // 创建一个队列，用于层次遍历
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            int size = queue.size();
             for (int i = 0; i < size; i++) {
-                // poll 获取并移除此列表的头结点
-                TreeNode currentNode = currentLevel.poll();
-                if (i == size - 1) {
-                    list.add(currentNode.val);
-                }
+                TreeNode cur = queue.poll();
+                // 将每层最右边节点加入右视图中
+                if (i == size - 1) res.add(cur.val);
                 // 将该节点的左右孩子推入队列
-                if (currentNode.left != null) {
-                    currentLevel.add(currentNode.left);
-                }
-                if (currentNode.right != null) {
-                    currentLevel.add(currentNode.right);
-                }
+                if (cur.left != null) queue.add(cur.left);
+                if (cur.right != null) queue.add(cur.right);
             }
         }
-        return list;
+        return res;
     }
 }
