@@ -1,12 +1,21 @@
 package NO_0105_Construct_Binary_Tree_from_Preorder_and_Inorder_Traversal;
 
-
-
 class Solution {
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         return buildTree(preorder, 0, preorder.length - 1, inorder, 0, inorder.length - 1);
     }
 
+    /**
+     * 从前序与中序遍历序列构造二叉树
+     *
+     * @param preorder 前序序列
+     * @param ps       前序序列起点
+     * @param pe       前序序列终点
+     * @param inorder  中序序列
+     * @param is       中序序列起点
+     * @param ie       中序序列终点
+     * @return 根节点
+     */
     private TreeNode buildTree(int[] preorder, int ps, int pe, int[] inorder, int is, int ie) {
         if (ps > pe) {
             return null;
