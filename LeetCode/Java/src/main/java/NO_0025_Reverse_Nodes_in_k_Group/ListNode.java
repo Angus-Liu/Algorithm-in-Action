@@ -10,8 +10,6 @@ public class ListNode {
 
     /**
      * 链表构造函数，将 arr 转成链表，当前节点即为链表头节点
-     *
-     * @param arr
      */
     public ListNode(int[] arr) {
         if (arr == null || arr.length == 0) {
