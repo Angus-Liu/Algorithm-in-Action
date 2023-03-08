@@ -11,16 +11,15 @@ class Solution {
     // [0] - edge end as next; [1] - edge color
     private final Queue<int[]> queue = new LinkedList<>();
     // key: cur node, value: all nodes connected to the current node
-    private Map<Integer, List<Integer>> redEdgeMap;
-    private Map<Integer, List<Integer>> blueEdgeMap;
+    private Map<Integer, List<Integer>>[] edgeMaps;
     private final Function<int[][], Map<Integer, List<Integer>>> toMap =
             edges -> Arrays.stream(edges).collect(Collectors.groupingBy(
                     edge -> edge[0], Collectors.mapping(edge -> edge[1], Collectors.toList())
             ));
 
     private void visitNext(int curIdx, int nextColor) {
-        Map<Integer, List<Integer>> edgeMap = nextColor == RED ? redEdgeMap : blueEdgeMap;
-        edgeMap.getOrDefault(curIdx, Collections.emptyList())
+        edgeMaps[nextColor]
+                .getOrDefault(curIdx, Collections.emptyList())
                 .stream()
                 .filter(next -> !visited[nextColor][next])
                 .forEach(next -> {
@@ -31,9 +30,7 @@ class Solution {
     }
 
     public int[] shortestAlternatingPaths(int n, int[][] redEdges, int[][] blueEdges) {
-        redEdgeMap = toMap.apply(redEdges);
-        blueEdgeMap = toMap.apply(blueEdges);
-
+        edgeMaps = new Map[]{toMap.apply(redEdges), toMap.apply(blueEdges)};
         int[] shortestPath = new int[n];
         Arrays.fill(shortestPath, -1);
         shortestPath[0] = 0;
