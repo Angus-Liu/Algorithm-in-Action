@@ -40,8 +40,7 @@ class Solution {
         visitNext(0, RED);
         visitNext(0, BLUE);
 
-        int path = 1;
-        while (!queue.isEmpty()) {
+        for (int path = 1; !queue.isEmpty(); path++) {
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 int[] edge = queue.remove();
@@ -49,7 +48,6 @@ class Solution {
                 visitNext(cur, curColor == RED ? BLUE : RED);
                 if (shortestPath[cur] == -1) shortestPath[cur] = path;
             }
-            path++;
         }
         return shortestPath;
     }
