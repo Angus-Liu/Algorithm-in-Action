@@ -41,8 +41,7 @@ class Solution {
         visitNext(0, BLUE);
 
         for (int path = 1; !queue.isEmpty(); path++) {
-            int size = queue.size();
-            for (int i = 0; i < size; i++) {
+            for (int i = queue.size(); i > 0; i--) {
                 int[] edge = queue.remove();
                 int cur = edge[0], curColor = edge[1];
                 visitNext(cur, curColor == RED ? BLUE : RED);
