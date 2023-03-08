@@ -3,24 +3,28 @@ package NO_0752_Open_the_Lock;
 import java.util.*;
 
 class Solution {
+    /**
+     * BFS
+     */
     public int openLock(String[] deadends, String target) {
         Set<String> deadendSet = new HashSet<>(Arrays.asList(deadends));
-        if (deadendSet.contains("0000")) return -1;
-        if ("0000".equals(target)) return 0;
-        Set<String> visitedSet = new HashSet<>();
+
+        String start = "0000";
+        if (deadendSet.contains(start)) return -1;
+        if (start.equals(target)) return 0;
+
         Queue<String> queue = new LinkedList<>();
-        queue.add("0000");
-        visitedSet.add("0000");
+        queue.add(start);
+        Set<String> visitedSet = new HashSet<>();
+        visitedSet.add(start);
+
         // 广度优先搜索
         for (int step = 1; !queue.isEmpty(); step++) {
-            System.out.println(queue);
             for (int n = queue.size(); n > 0; n--) {
                 String cur = queue.remove();
                 List<String> nextLocks = getNextLock(cur);
                 for (String nextLock : nextLocks) {
-                    if (nextLock.equals(target)) {
-                        return step;
-                    }
+                    if (nextLock.equals(target)) return step;
                     if (!deadendSet.contains(nextLock) && !visitedSet.contains(nextLock)) {
                         queue.add(nextLock);
                         visitedSet.add(nextLock);
@@ -31,22 +35,23 @@ class Solution {
         return -1;
     }
 
+    //    0900  0100  0009
+    //        \  |  /
+    // 1000 —— 0000 —— 0001
+    //       /  |   \
+    // 9000   0010   0090
     private List<String> getNextLock(String curLock) {
         List<String> nextLocks = new ArrayList<>();
-        char[] oriLockChars = curLock.toCharArray();
         char[] curLockChars = curLock.toCharArray();
-        int[] difs = new int[]{-1, 1};
         for (int i = 0; i < 4; i++) {
-            for (int dif : difs) {
-                curLockChars[i] += dif;
-                if (curLockChars[i] < '0') {
-                    curLockChars[i] = '9';
-                } else if (curLockChars[i] > '9') {
-                    curLockChars[i] = '0';
-                }
-                nextLocks.add(String.valueOf(curLockChars));
-                curLockChars[i] = oriLockChars[i];
-            }
+            char tmp = curLockChars[i];
+            // +1
+            curLockChars[i] = (char) ((tmp - '0' + 1) % 10 + '0');
+            nextLocks.add(new String(curLockChars));
+            // -1: (tmp - '0' - 1 + 10) % 10
+            curLockChars[i] = (char) ((tmp - '0' + 9) % 10 + '0');
+            nextLocks.add(new String(curLockChars));
+            curLockChars[i] = tmp;
         }
         return nextLocks;
     }
