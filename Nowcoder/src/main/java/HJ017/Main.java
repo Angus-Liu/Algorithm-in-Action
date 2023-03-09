@@ -1,4 +1,4 @@
-package HJ17;
+package HJ017;
 
 import java.util.Scanner;
 
