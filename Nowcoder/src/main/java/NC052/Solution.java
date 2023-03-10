@@ -22,7 +22,7 @@ public class Solution {
      */
     public boolean isValid(String s) {
         // write code here
-        Deque<Character> stack = new LinkedList<>();
+        Deque<Character> stack = new ArrayDeque<>();
         for (char c : s.toCharArray()) {
             if (MAP.containsKey(c)) {
                 if (stack.isEmpty() || stack.pop() != MAP.get(c)) {
