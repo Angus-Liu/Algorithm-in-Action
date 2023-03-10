@@ -15,31 +15,31 @@ public class Solution {
      * @return string字符串
      */
     public String minWindow(String S, String T) {
-        Map<Character, Integer> tMap = new HashMap<>();
+        Map<Character, Integer> tCnt = new HashMap<>();
         for (char c : T.toCharArray()) {
-            tMap.merge(c, 1, Integer::sum);
+            tCnt.merge(c, 1, Integer::sum);
         }
 
-        int start = 0, min = Integer.MAX_VALUE;
-        Map<Character, Integer> sMap = new HashMap<>();
-        for (int l = 0, r = 0; r < S.length(); r++) {
-            sMap.merge(S.charAt(r), 1, Integer::sum);
-            while (included(sMap, tMap)) {
-                if (r - l + 1 < min) {
-                    start = l;
-                    min = r - l + 1;
+        int start = 0, minLen = Integer.MAX_VALUE;
+        Map<Character, Integer> sCnt = new HashMap<>();
+        for (int left = 0, right = 0; right < S.length(); right++) {
+            sCnt.merge(S.charAt(right), 1, Integer::sum);
+            while (included(sCnt, tCnt)) {
+                if (right - left + 1 < minLen) {
+                    start = left;
+                    minLen = right - left + 1;
                 }
                 // 窗口左边界缩小
-                sMap.merge(S.charAt(l), -1, Integer::sum);
-                l++;
+                sCnt.merge(S.charAt(left), -1, Integer::sum);
+                left++;
             }
         }
-        return min == Integer.MAX_VALUE ? "" : S.substring(start, start + min);
+        return minLen == Integer.MAX_VALUE ? "" : S.substring(start, start + minLen);
     }
 
-    private boolean included(Map<Character, Integer> sMap, Map<Character, Integer> tMap) {
-        for (Map.Entry<Character, Integer> e : tMap.entrySet()) {
-            if (sMap.getOrDefault(e.getKey(), 0) < e.getValue())
+    private boolean included(Map<Character, Integer> sCnt, Map<Character, Integer> tCnt) {
+        for (Map.Entry<Character, Integer> e : tCnt.entrySet()) {
+            if (sCnt.getOrDefault(e.getKey(), 0) < e.getValue())
                 return false;
         }
         return true;
