@@ -9,11 +9,17 @@ class Solution {
      * 前缀和
      */
     public String[] findLongestSubarray(String[] array) {
+        // 使用哈希表来记录前缀和及其对应最左索引
         Map<Integer, Integer> sumToIdx = new HashMap<>();
+        // 为了处理数组中第一个元素开始就是最长子数组的情况，
+        // 将前缀和为 0 的索引设为 -1 并加入哈希表中。
         sumToIdx.put(0, -1);
         int start = 0, maxLen = 0;
         for (int i = 0, preSum = 0; i < array.length; i++) {
+            // 字符串为数字时前缀和减 1，为字母时前缀和加 1
             preSum += array[i].charAt(0) <= '9' ? -1 : 1;
+            // 如果当前前缀和已经存在于哈希表中，则 i 与 preIdx 之间的和为 0，
+            // 说明 i 与 preIdx 之间数字和字母数目相同
             if (sumToIdx.containsKey(preSum)) {
                 int preIdx = sumToIdx.get(preSum);
                 int curLen = i - preIdx;
