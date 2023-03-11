@@ -1,7 +1,9 @@
 package JZ_Offer_II_012;
 
+import java.util.Arrays;
+
 class Solution {
-    public int pivotIndex(int[] nums) {
+    public int pivotIndex1(int[] nums) {
         int n = nums.length;
         int[] sums = new int[n];
         for (int i = n - 1, rs = 0; i >= 0; i--) {
@@ -10,6 +12,15 @@ class Solution {
         }
         for (int i = 0, ls = 0; i < n; i++) {
             if (sums[i] - ls == 0) return i;
+            ls += nums[i];
+        }
+        return -1;
+    }
+
+    public int pivotIndex(int[] nums) {
+        int sum = Arrays.stream(nums).sum();
+        for (int i = 0, ls = 0; i < nums.length; i++) {
+            if (2 * ls + nums[i] == sum) return i;
             ls += nums[i];
         }
         return -1;
