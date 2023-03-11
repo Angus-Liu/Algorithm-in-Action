@@ -3,39 +3,22 @@ package JZ_Offer_II_013;
 class NumMatrix {
 
     private final int[][] sums;
-    private final int row;
-    private final int col;
 
     public NumMatrix(int[][] matrix) {
-        row = matrix.length;
-        col = matrix[0].length;
-        sums = new int[row][col];
+        int row = matrix.length;
+        int col = matrix[0].length;
+        sums = new int[row + 1][col + 1];
         for (int i = row - 1; i >= 0; i--) {
             for (int j = col - 1; j >= 0; j--) {
-                sums[i][j] = matrix[i][j];
-                // 加右边的
-                boolean right = j + 1 < col;
-                sums[i][j] += right ? sums[i][j + 1] : 0;
-                // 加下面的
-                boolean down = i + 1 < row;
-                sums[i][j] += down ? sums[i + 1][j] : 0;
-                // 减对角的，重复部分
-                sums[i][j] -= (right && down) ? sums[i + 1][j + 1] : 0;
+                // 加右边的，加下面的，减对角重复部分
+                sums[i][j] = matrix[i][j] + sums[i][j + 1] + sums[i + 1][j] - sums[i + 1][j + 1];
             }
         }
     }
 
     public int sumRegion(int row1, int col1, int row2, int col2) {
-        int sum = sums[row1][col1];
-        // 减去右边
-        boolean right = col2 + 1 < col;
-        sum -= right ? sums[row1][col2 + 1] : 0;
-        // 减去下边
-        boolean down = row2 + 1 < row;
-        sum -= down ? sums[row2 + 1][col1] : 0;
-        // 加上重复减去部分
-        sum += (right && down) ? sums[row2 + 1][col2 + 1] : 0;
-        return sum;
+        // 减去右边，减去下边，加上重复减去部分
+        return sums[row1][col1] - sums[row1][col2 + 1] - sums[row2 + 1][col1] + sums[row2 + 1][col2 + 1];
     }
 
     public static void main(String[] args) {
