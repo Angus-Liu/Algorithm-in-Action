@@ -1,4 +1,4 @@
-package NO_LCP_22;
+package LCP_022;
 
 /**
  * 黑白方格画

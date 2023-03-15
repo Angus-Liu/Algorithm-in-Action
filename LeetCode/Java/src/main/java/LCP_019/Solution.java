@@ -1,4 +1,4 @@
-package NO_LCP_19;
+package LCP_019;
 
 /**
  * 秋叶收藏集
