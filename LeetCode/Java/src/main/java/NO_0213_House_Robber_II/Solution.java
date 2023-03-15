@@ -1,31 +1,29 @@
 package NO_0213_House_Robber_II;
 
 class Solution {
+    /**
+     * 动态规划，在 198 号问题基础上修改
+     */
     public int rob(int[] nums) {
-        // 动态规划，在 198 号问题基础上修改
         int n = nums.length;
-        if (n == 0) {
-            return 0;
-        } else if (n == 1) {
-            return nums[0];
-        } else if (n == 2) {
-            return Math.max(nums[0], nums[1]);
-        } else {
+        return switch (n) {
+            case 0 -> 0;
+            case 1 -> nums[0];
+            case 2 -> Math.max(nums[0], nums[1]);
             // 考虑不抢劫 n-1 号房间和不抢劫 0 号房间的情况
-            return Math.max(rob(nums, 0, n-2), rob(nums, 1, n-1));
-        }
-
+            default -> Math.max(rob(nums, 0, n - 2), rob(nums, 1, n - 1));
+        };
     }
 
     private int rob(int[] nums, int start, int end) {
-        int preMax = nums[start];
-        int curMax = Math.max(preMax, nums[start + 1]);
+        int pre = nums[start];
+        int cur = Math.max(pre, nums[start + 1]);
         for (int i = start + 2; i <= end; i++) {
-            int temp = curMax;
-            curMax = Math.max((preMax + nums[i]), curMax);
-            preMax = temp;
+            int tmp = cur;
+            cur = Math.max((pre + nums[i]), cur);
+            pre = tmp;
         }
-        return curMax;
+        return cur;
     }
 
     public static void main(String[] args) {
