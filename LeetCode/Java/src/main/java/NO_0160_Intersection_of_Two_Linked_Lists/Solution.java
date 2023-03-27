@@ -58,10 +58,14 @@ public class Solution {
      * 指针追逐
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        if (headA == null || headB == null) return null;
+        // 定义两个指针, 第一轮让两个到达末尾的节点指向另一个链表的头部,
+        // 最后如果相遇则为交点(在第一轮移动中恰好抹除了长度差)
+        // 两个指针等于移动了相同的距离, 有交点就返回, 无交点就是各走了两条指针的长度
         ListNode curA = headA, curB = headB;
+        // 在这里第一轮体现在curA和curB第一次到达尾部会移向另一链表的表头,
+        // 而第二轮体现在如果curA或curB相交就返回交点, 不相交最后就是null==null
         while (curA != curB) {
-            // 第一轮结束时，指针指向另一条链表的头结点，继续遍历，这样便消除了两条链表的长度差
-            // 第二轮若链表相交，就返回相交节点，否者，最后返回 null
             curA = curA == null ? headB : curA.next;
             curB = curB == null ? headA : curB.next;
         }
