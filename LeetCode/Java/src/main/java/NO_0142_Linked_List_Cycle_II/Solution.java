@@ -3,24 +3,10 @@ package NO_0142_Linked_List_Cycle_II;
 import java.util.HashSet;
 import java.util.Set;
 
-/**
- * Definition for singly-linked list.
- * class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
 public class Solution {
 
     /**
      * 哈希表
-     *
-     * @param head
-     * @return
      */
     public ListNode detectCycle_1(ListNode head) {
         Set<ListNode> set = new HashSet<>();
@@ -36,9 +22,6 @@ public class Solution {
 
     /**
      * 双指针
-     *
-     * @param head
-     * @return
      */
     public ListNode detectCycle(ListNode head) {
         ListNode slow = head;
