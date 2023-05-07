@@ -36,14 +36,11 @@ class Solution {
         StringBuilder root = new StringBuilder();
         for (char c : word.toCharArray()) {
             int i = c - 'a';
-            if (trie.next[i] == null) return word;
+            if (trie.isEnd || trie.next[i] == null) break;
             root.append(c);
-            if (trie.next[i].isEnd) {
-                return root.toString();
-            }
             trie = trie.next[i];
         }
-        return word;
+        return trie.isEnd ? root.toString() : word;
     }
 
     public String replaceWords(List<String> dictionary, String sentence) {
