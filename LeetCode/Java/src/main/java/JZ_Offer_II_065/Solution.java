@@ -1,45 +1,39 @@
 package JZ_Offer_II_065;
 
 class Solution {
-
-    private Trie root = new Trie();
-
     static class Trie {
-        Trie[] children;
-
-        public Trie() {
-            this.children = new Trie[26];
-        }
+        private boolean isLeaf = false;
+        private final Trie[] next = new Trie[26];
     }
 
     public int minimumLengthEncoding(String[] words) {
+        int minLen = 0;
+        Trie root = new Trie();
         for (String word : words) {
-            Trie node = root;
+            Trie cur = root;
+            boolean hasNewBranch = false;
             for (int i = word.length() - 1; i >= 0; i--) {
                 int idx = word.charAt(i) - 'a';
-                if (node.children[idx] == null) {
-                    node.children[idx] = new Trie();
+                if (cur.next[idx] == null) {
+                    cur.next[idx] = new Trie();
+                    hasNewBranch = true;
+                    if (cur.isLeaf) {
+                        minLen -= word.length() - i;
+                        cur.isLeaf = false;
+                    }
                 }
-                node = node.children[idx];
+                cur = cur.next[idx];
+            }
+            if (hasNewBranch) {
+                minLen += word.length() + 1;
+                cur.isLeaf = true;
             }
         }
-        return dfs(root, 0);
-    }
-
-    private int dfs(Trie root, int curPathLen) {
-        boolean isLeaf = true;
-        int childrenPathsLen = 0;
-        for (Trie child : root.children) {
-            if (child != null) {
-                isLeaf = false;
-                childrenPathsLen += dfs(child, curPathLen + 1);
-            }
-        }
-        return isLeaf ? curPathLen + 1: childrenPathsLen;
+        return minLen;
     }
 
     public static void main(String[] args) {
-        String[] words = {"time", "me", "bell"};
+        String[] words = {"time", "ime", "bell"};
         Solution solution = new Solution();
         int len = solution.minimumLengthEncoding(words);
         System.out.println("len = " + len);
