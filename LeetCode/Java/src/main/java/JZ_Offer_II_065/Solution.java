@@ -18,15 +18,15 @@ class Solution {
                     cur.next[idx] = new Trie();
                     hasNewBranch = true;
                     if (cur.isLeaf) {
-                        minLen -= word.length() - i;
                         cur.isLeaf = false;
+                        minLen -= word.length() - i;
                     }
                 }
                 cur = cur.next[idx];
             }
             if (hasNewBranch) {
-                minLen += word.length() + 1;
                 cur.isLeaf = true;
+                minLen += word.length() + 1;
             }
         }
         return minLen;
