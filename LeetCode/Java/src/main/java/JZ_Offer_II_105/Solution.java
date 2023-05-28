@@ -4,21 +4,25 @@ import java.util.ArrayDeque;
 import java.util.Queue;
 
 class Solution {
-
     private static final int[][] vecArr = {
             {-1, 0}, {1, 0}, {0, -1}, {0, 1}
     };
 
     public int maxAreaOfIsland(int[][] grid) {
+        return bfs(grid);
+    }
+
+    /**
+     * 广度有限搜索
+     */
+    private int bfs(int[][] grid) {
         int r = grid.length;
         int c = grid[0].length;
         boolean[][] visited = new boolean[r][c];
         int maxArea = 0;
         // 岛屿数
         int islandCnt = 0;
-
         Queue<int[]> queue = new ArrayDeque<>();
-
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
                 if (grid[i][j] == 1 && !visited[i][j]) {
@@ -57,7 +61,6 @@ class Solution {
                 {0, 0, 0, 1, 1},
                 {1, 0, 0, 1, 1}
         };
-
         int maxArea = new Solution().maxAreaOfIsland(grids);
         System.out.println("maxArea = " + maxArea);
     }
