@@ -5,7 +5,7 @@ import java.util.Map;
 
 class LRUCache {
 
-    private LRU cache;
+    private final LRU cache;
 
     public LRUCache(int capacity) {
         this.cache = new LRU(capacity);
@@ -22,7 +22,7 @@ class LRUCache {
         cache.put(key, value);
     }
 
-    class LRU extends LinkedHashMap<Integer, Integer> {
+    static class LRU extends LinkedHashMap<Integer, Integer> {
         int capacity;
 
         public LRU(int capacity) {
