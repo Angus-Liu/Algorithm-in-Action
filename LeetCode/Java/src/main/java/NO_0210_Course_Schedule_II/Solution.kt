@@ -1,4 +1,4 @@
-package `NO_0210_Course_Schedule_II `
+package NO_0210_Course_Schedule_II
 
 class Solution {
     fun findOrder(numCourses: Int, prerequisites: Array<IntArray>): IntArray {
