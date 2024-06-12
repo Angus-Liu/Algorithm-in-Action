@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.28)
+project(2806_Account_Balance_After_Rounded_Purchase)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(2806_Account_Balance_After_Rounded_Purchase Solution.cpp)
