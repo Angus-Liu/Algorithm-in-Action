@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.28)
+project(2779_Maximum_Beauty_of_an_Array_After_Applying_Operation)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(2779_Maximum_Beauty_of_an_Array_After_Applying_Operation Solution.cpp)
