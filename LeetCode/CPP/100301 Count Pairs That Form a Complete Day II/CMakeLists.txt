@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.28)
+project(100301_Count_Pairs_That_Form_a_Complete_Day_II)
+
+set(CMAKE_CXX_STANDARD 20)
+
+add_executable(100301_Count_Pairs_That_Form_a_Complete_Day_II main.cpp)
