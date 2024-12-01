@@ -46,8 +46,8 @@ class Solution {
         // 先确保 root.right 下的节点的已完全连接，因 root.left 下的节点的连接
         // 需要 root.left.next 下的节点的信息，若 root.right 下的节点未完全连
         // 接（即先对 root.left 递归），则 root.left.next 下的信息链不完整，将
-        // 返回错误的信息。可能出现的错误情况如下图所示，此时，底层最左边节点将无
-        // 法获得正确的 next 信息：
+        // 返回错误的信息。可能出现的错误情况如下图所示，此时，底层最左边节点将无法
+        // 获得正确的 next 信息：
         //                   o root
         //                 /  \
         //    root.left  o ——  o  root.right
